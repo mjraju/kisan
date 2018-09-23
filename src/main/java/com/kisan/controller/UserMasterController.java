@@ -1,6 +1,10 @@
 package com.kisan.controller;
 
+import com.kisan.model.LoginRequest;
+import com.kisan.model.LoginResponse;
+import com.kisan.utils.ApplicationConstants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -23,12 +27,17 @@ public class UserMasterController {
 	@Autowired
 	UserService userService;
 	
-	@GetMapping("/Authenticate/{userId}/{pwd}")
+	@PostMapping("/Authenticate")
 	@CrossOrigin
-	public String authenticateUser (@PathVariable String userId,
-			@PathVariable String pwd) {
-		
-		return AuthService.AuthenticateUser(userId, pwd);
+	public ResponseEntity<LoginResponse> authenticateUser (@RequestBody LoginRequest loginRequest) {
+		LoginResponse loginResponse = new LoginResponse();
+		loginResponse = AuthService.AuthenticateUser(loginRequest);
+		if(loginResponse.getCode() == ApplicationConstants.SUCCESS_CODE){
+			return new ResponseEntity<>(loginResponse,HttpStatus.ACCEPTED);
+		}else{
+			return new ResponseEntity<>(loginResponse,HttpStatus.BAD_REQUEST);
+		}
+
 	}
 	
 	@PostMapping("/Saveuser")

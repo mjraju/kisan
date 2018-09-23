@@ -1,5 +1,8 @@
 package com.kisan.service.impl;
 
+import com.kisan.model.LoginRequest;
+import com.kisan.model.LoginResponse;
+import com.kisan.utils.ApplicationConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -13,24 +16,31 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 	@Autowired
 	private UserMasterRepository userMasterRepo;
 
-	public String AuthenticateUser(String userID,String pwd) {
+	public LoginResponse AuthenticateUser(LoginRequest loginRequest) {
 		String userRole = null;
 		UserMaster userMstObj = null;
+		LoginResponse loginResponse = new LoginResponse();
 		try {
-			if (userID != null && pwd != null) {
-				userMstObj = userMasterRepo.findByUserId(userID);
+			if (loginRequest.getUserId()!= null && loginRequest.getPassword() != null) {
+				loginResponse.setUserId(loginRequest.getUserId());
+				userMstObj = userMasterRepo.findByUserId(loginRequest.getUserId());
 				
 				if (userMstObj != null) {
-					if (pwd.equals(userMstObj.getPassword()))
-							userRole = userMstObj.getUserRole();
+					if (loginRequest.getPassword().equals(userMstObj.getPassword())){
+						loginResponse.setCode(ApplicationConstants.SUCCESS_CODE);
+						loginResponse.setUserRole(userMstObj.getUserRole());
+					}
 					else
 						userRole = "invalid password";
+				}else {
+					loginResponse.setCode(ApplicationConstants.ERROR_CODE);
+					loginResponse.setStatusMessage("User Not Found");
 				}
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return userRole;
+		return loginResponse;
 	}
 
 }
