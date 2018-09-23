@@ -106,6 +106,22 @@ public class TransactionDetails {
 		this.selling_date = selling_date;
 	}
 
-
-
+	@Override
+	public String toString() {
+		return "TransactionDetails{" +
+				"transId=" + transId +
+				", farmer_id=" + farmer_id +
+				", item_id=" + item_id +
+				", source_location='" + source_location + '\'' +
+				", create_date=" + create_date +
+				", qantity=" + qantity +
+				", grade='" + grade + '\'' +
+				", status='" + status + '\'' +
+				", storage_loc='" + storage_loc + '\'' +
+				", storage_date=" + storage_date +
+				", price=" + price +
+				", selling_loc='" + selling_loc + '\'' +
+				", selling_date=" + selling_date +
+				'}';
+	}
 }

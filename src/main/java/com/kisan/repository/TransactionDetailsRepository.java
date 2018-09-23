@@ -3,7 +3,9 @@ package com.kisan.repository;
 import com.kisan.model.TransactionDetails;
 import org.springframework.data.repository.CrudRepository;
 
-public interface TransactionDetailsRepository extends CrudRepository<TransactionDetails,Integer> {
+import java.math.BigInteger;
 
-	TransactionDetails findBytransId(int transId);
+public interface TransactionDetailsRepository extends CrudRepository<TransactionDetails,BigInteger> {
+
+	TransactionDetails findByTransId(BigInteger transId);
 }
