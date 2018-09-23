@@ -1,5 +1,7 @@
 package com.kisan.model;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -20,6 +22,75 @@ public class ItemMaster {
 	private String item_desc;
 
 	private String item_localname;
+	
+	private float rate;
+	
+	private String unit;
+	
+	private float mrp;
+	
+	private float discount_rate;
+	
+	private Date effective_from;
+	
+	private String brand;
+	
+	
+	public int getItemId() {
+		return itemId;
+	}
+
+	public void setItemId(int itemId) {
+		this.itemId = itemId;
+	}
+
+	public float getRate() {
+		return rate;
+	}
+
+	public void setRate(float rate) {
+		this.rate = rate;
+	}
+
+	public String getUnit() {
+		return unit;
+	}
+
+	public void setUnit(String unit) {
+		this.unit = unit;
+	}
+
+	public float getMrp() {
+		return mrp;
+	}
+
+	public void setMrp(float mrp) {
+		this.mrp = mrp;
+	}
+
+	public float getDiscount_rate() {
+		return discount_rate;
+	}
+
+	public void setDiscount_rate(float discount_rate) {
+		this.discount_rate = discount_rate;
+	}
+
+	public Date getEffective_from() {
+		return effective_from;
+	}
+
+	public void setEffective_from(Date effective_from) {
+		this.effective_from = effective_from;
+	}
+
+	public String getBrand() {
+		return brand;
+	}
+
+	public void setBrand(String brand) {
+		this.brand = brand;
+	}
 
 	public int getItem_id() {
 		return itemId;

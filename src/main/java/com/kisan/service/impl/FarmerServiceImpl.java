@@ -20,6 +20,8 @@ public class FarmerServiceImpl implements FarmerService {
 		try {
 			if(farmerMst != null) {
 				farmerMst.setCreateDate(new Date(System.currentTimeMillis()));
+				System.out.println("name=="+farmerMst.getBankName());
+				System.out.println("cult prods=="+farmerMst.getCultivableProds());
 				farmerRepo.save(farmerMst);
 			}
 		} catch (Exception e) {
