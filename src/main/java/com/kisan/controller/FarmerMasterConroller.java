@@ -1,5 +1,6 @@
 package com.kisan.controller;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -15,7 +16,7 @@ import com.kisan.service.FarmerService;
 @RestController
 @CrossOrigin
 public class FarmerMasterConroller {
-	
+	Logger logger = Logger.getLogger(FarmerMasterConroller.class);
 	@Autowired
 	FarmerService farmerService;
 	
@@ -29,6 +30,7 @@ public class FarmerMasterConroller {
 	@PostMapping("/SaveFarmer")
 	@CrossOrigin
 	public ResponseEntity<Object> saveItem(@RequestBody FarmerMaster farmerMst) {
+		logger.info("Save Farmer  : "+farmerMst.getFarmerId());
 		farmerService.saveFarmerDetails(farmerMst);
 		return ResponseEntity.noContent().build();
 	}
