@@ -681,3 +681,23 @@ label{
 .row{
 	padding-top: 10px;
 }
+.firstButton{
+    margin-right: 20px;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button,
+input[type=date]::-webkit-inner-spin-button, 
+input[type=date]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.successMsg{font-size: 14px;font-weight: 900;padding-left: 40px;padding-bottom: 10px;color: #4CAF50;}
+.errorMsg{font-size: 14px;font-weight: 900;padding-left: 40px;padding-bottom: 10px;color: #cd040b;}
+hr{
+    border:1px solid white;
+    margin: 0px;
+}
+.sub-header{
+    padding-top: 15px;
+    text-align: center;
+}

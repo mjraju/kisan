@@ -466,6 +466,147 @@ var AdduserComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/agent/agent.component.css":
+/*!*******************************************!*\
+  !*** ./src/app/agent/agent.component.css ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "hr{\r\n    border:1px solid white;\r\n    margin: 0px;\r\n}\r\n.sub-header{\r\n    padding-top: 15px;\r\n    text-align: center;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/agent/agent.component.html":
+/*!********************************************!*\
+  !*** ./src/app/agent/agent.component.html ***!
+  \********************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"content\">\n  <div class=\"container_24\">\n    <div class=\"wrapper\">\n      <div class=\"grid_24 content-bg\">\n        <div class=\"wrapper\">\n          <div class=\"page-header\">\n            <h3 class=\"cnt-head\">Product > Add Agent</h3>\n          </div>\n          <div class=\"successMsg\" *ngIf=\"successflag\">{{successMsg}}</div>\n          <div class=\"errorMsg\" *ngIf=\"errorFlag\">{{errorMsg}}</div>\n          <article class=\"grid_22 suffix_1 prefix_1 alpha omega\">\n            <div id=\"farmerDetails\">\n              <form class=\"mbr-form\">\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"agentName\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Agent Name</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.agentName\" name=\"agentName\"\n                          data-form-field=\"agentName\" required id=\"agentName\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"agentType\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Agent Type</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.agentType\" name=\"agentType\"\n                          data-form-field=\"agentType\" required=\"\" id=\"agentType\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"sub-header\">\n                  <h5>Address Details : </h5>\n                  <hr>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine1\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Line1</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.addressLine1\" name=\"addressLine1\"\n                          data-form-field=\"addressLine1\" required id=\"addressLine1\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine2\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Line2</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.addressLine2\"\n                          name=\"addressLine2\" data-form-field=\"addressLine2\" required=\"\" id=\"addressLine2\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine3\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">addressLine3</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.addressLine3\" name=\"addressLine3\"\n                          data-form-field=\"addressLine3\" required id=\"addressLine3\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"city\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">City</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.city\" name=\"city\"\n                          data-form-field=\"city\" required=\"\" id=\"city\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"state\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">State</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.state\" name=\"state\"\n                          data-form-field=\"state\" required id=\"state\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"pin\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Pin</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.pin\" name=\"pin\"\n                          data-form-field=\"pin\" required=\"\" id=\"pin\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"email\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Email Id</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.email\" name=\"email\"\n                          data-form-field=\"email\" required id=\"email\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"mobileNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Mobile Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.mobileNum\" name=\"mobileNum\"\n                          data-form-field=\"mobileNum\" required=\"\" id=\"mobileNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"altMobileNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Alternate Mobile Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.altMobileNum\" name=\"altMobileNum\"\n                          data-form-field=\"altMobileNum\" required id=\"altMobileNum\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"residencePhNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Residence Phone Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.residencePhNum\"\n                          name=\"residencePhNum\" data-form-field=\"residencePhNum\" required=\"\" id=\"residencePhNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"officePhNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Office Phone Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"agent.addressDetails.officePhNum\" name=\"officePhNum\"\n                          data-form-field=\"officePhNum\" required id=\"officePhNum\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressType\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Type</label>\n                      <div class=\"col-lg-7\">\n                        <div style=\"float: left\">\n                          <input type=\"radio\" value=\"B\" name=\"addressType\" [(ngModel)]=\"agent.addressDetails.addressType\">\n                          Billing\n                        </div>\n                        <div style=\"padding-left: 75px;\">\n                          <input type=\"radio\" value=\"D\" name=\"addressType\" [(ngModel)]=\"agent.addressDetails.addressType\">\n                          Delivery\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"sub-header\">\n                  <h5>Registration Details : </h5>\n                  <hr>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"pan\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">PAN</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.registrationInfo.pan\" name=\"pan\"\n                          data-form-field=\"pan\" required id=\"pan\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"tin\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">TIN</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.registrationInfo.tin\" name=\"tin\"\n                          data-form-field=\"tin\" required id=\"tin\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"gst\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">GST</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.registrationInfo.gst\" name=\"gst\"\n                          data-form-field=\"gst\" required id=\"gst\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"cst\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">CST</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.registrationInfo.cst\" name=\"cst\"\n                          data-form-field=\"cst\" required id=\"cst\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"licenceNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Licence Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"agent.registrationInfo.licenceNum\" name=\"licenceNum\"\n                          data-form-field=\"licenceNum\" required id=\"licenceNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"firstButton multi-horizontal\" >\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"saveAgent()\">Save Agent</button>\n                    </span>\n                  </div>\n                  <div class=\"firstButton multi-horizontal\">\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"editAgent()\">Edit Agent</button>\n                    </span>\n                  </div>\n                  <div class=\"firstButton multi-horizontal\">\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"deleteAgent()\">Delete Agent</button>\n                    </span>\n                  </div>\n                </div>\n              </form>\n            </div>\n          </article>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/agent/agent.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/agent/agent.component.ts ***!
+  \******************************************/
+/*! exports provided: AgentComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AgentComponent", function() { return AgentComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _kisan_portal_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../kisan-portal.service */ "./src/app/kisan-portal.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var AgentComponent = /** @class */ (function () {
+    function AgentComponent(kisanPortalService) {
+        this.kisanPortalService = kisanPortalService;
+        this.errorMsg = 'Unable to Save Agent Details, Please Try again.';
+        this.successMsg = 'Agent Details Saved Successfully.';
+        this.errorFlag = false;
+        this.successflag = false;
+        this.agent = {
+            agentName: "",
+            agentType: "",
+            description: "",
+            addressDetails: {
+                addressLine1: "",
+                addressLine2: "",
+                addressLine3: "",
+                city: "",
+                state: "",
+                pin: 0,
+                email: "",
+                mobileNum: 0,
+                altMobileNum: 0,
+                residencePhNum: 0,
+                officePhNum: 0,
+                addressType: ""
+            },
+            registrationInfo: {
+                pan: "",
+                tin: "",
+                gst: "",
+                cst: "",
+                licenceNum: ""
+            }
+        };
+    }
+    AgentComponent.prototype.ngOnInit = function () {
+    };
+    AgentComponent.prototype.saveAgent = function () {
+        var _this = this;
+        debugger;
+        console.log("Agent Data : " + this.agent);
+        this.kisanPortalService.saveAgent(this.agent).subscribe(function (data) {
+            console.log(data);
+            _this.errorFlag = false;
+            _this.successflag = false;
+            _this.successflag = true;
+            _this.clearAgentData();
+            _this.successMsg = "Agent Details are Saved Successfully.";
+        }, function (Error) {
+            _this.successflag = false;
+            _this.errorFlag = true;
+            _this.errorMsg = "Unable to Save Agent Details, Please Try again.";
+        });
+    };
+    AgentComponent.prototype.clearAgentData = function () {
+        this.agent = {
+            agentName: "",
+            agentType: "",
+            description: "",
+            addressDetails: {
+                addressLine1: "",
+                addressLine2: "",
+                addressLine3: "",
+                city: "",
+                state: "",
+                pin: 0,
+                email: "",
+                mobileNum: 0,
+                altMobileNum: 0,
+                residencePhNum: 0,
+                officePhNum: 0,
+                addressType: ""
+            },
+            registrationInfo: {
+                pan: "",
+                tin: "",
+                gst: "",
+                cst: "",
+                licenceNum: ""
+            }
+        };
+    };
+    AgentComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-agent',
+            template: __webpack_require__(/*! ./agent.component.html */ "./src/app/agent/agent.component.html"),
+            styles: [__webpack_require__(/*! ./agent.component.css */ "./src/app/agent/agent.component.css")]
+        }),
+        __metadata("design:paramtypes", [_kisan_portal_service__WEBPACK_IMPORTED_MODULE_1__["KisanPortalService"]])
+    ], AgentComponent);
+    return AgentComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/app-routing.module.ts":
 /*!***************************************!*\
   !*** ./src/app/app-routing.module.ts ***!
@@ -483,12 +624,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _addfarmer_addfarmer_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./addfarmer/addfarmer.component */ "./src/app/addfarmer/addfarmer.component.ts");
 /* harmony import */ var _adduser_adduser_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./adduser/adduser.component */ "./src/app/adduser/adduser.component.ts");
 /* harmony import */ var _dashboardhome_dashboardhome_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./dashboardhome/dashboardhome.component */ "./src/app/dashboardhome/dashboardhome.component.ts");
+/* harmony import */ var _agent_agent_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./agent/agent.component */ "./src/app/agent/agent.component.ts");
+/* harmony import */ var _item_master_item_master_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./item-master/item-master.component */ "./src/app/item-master/item-master.component.ts");
+/* harmony import */ var _store_location_store_location_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./store-location/store-location.component */ "./src/app/store-location/store-location.component.ts");
+/* harmony import */ var _kisan_supplier_kisan_supplier_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./kisan-supplier/kisan-supplier.component */ "./src/app/kisan-supplier/kisan-supplier.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -515,6 +664,22 @@ var routes = [
             {
                 path: 'addUser',
                 component: _adduser_adduser_component__WEBPACK_IMPORTED_MODULE_5__["AdduserComponent"]
+            },
+            {
+                path: 'addAgent',
+                component: _agent_agent_component__WEBPACK_IMPORTED_MODULE_7__["AgentComponent"]
+            },
+            {
+                path: 'addItem',
+                component: _item_master_item_master_component__WEBPACK_IMPORTED_MODULE_8__["ItemMasterComponent"]
+            },
+            {
+                path: 'addLocation',
+                component: _store_location_store_location_component__WEBPACK_IMPORTED_MODULE_9__["StoreLocationComponent"]
+            },
+            {
+                path: 'addSupplier',
+                component: _kisan_supplier_kisan_supplier_component__WEBPACK_IMPORTED_MODULE_10__["KisanSupplierComponent"]
             }
         ]
     }
@@ -544,7 +709,7 @@ var AppRoutingModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".firstButton{\r\n    margin-right: 20px;\r\n}"
 
 /***/ }),
 
@@ -636,12 +801,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _adduser_adduser_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./adduser/adduser.component */ "./src/app/adduser/adduser.component.ts");
 /* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.es5.js");
 /* harmony import */ var _dashboardhome_dashboardhome_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./dashboardhome/dashboardhome.component */ "./src/app/dashboardhome/dashboardhome.component.ts");
+/* harmony import */ var _agent_agent_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./agent/agent.component */ "./src/app/agent/agent.component.ts");
+/* harmony import */ var _item_master_item_master_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./item-master/item-master.component */ "./src/app/item-master/item-master.component.ts");
+/* harmony import */ var _store_location_store_location_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./store-location/store-location.component */ "./src/app/store-location/store-location.component.ts");
+/* harmony import */ var _kisan_supplier_kisan_supplier_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./kisan-supplier/kisan-supplier.component */ "./src/app/kisan-supplier/kisan-supplier.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
 
 
 
@@ -671,7 +844,11 @@ var AppModule = /** @class */ (function () {
                 _render_cell_render_cell_component__WEBPACK_IMPORTED_MODULE_10__["RenderCellComponent"],
                 _addfarmer_addfarmer_component__WEBPACK_IMPORTED_MODULE_11__["AddfarmerComponent"],
                 _adduser_adduser_component__WEBPACK_IMPORTED_MODULE_13__["AdduserComponent"],
-                _dashboardhome_dashboardhome_component__WEBPACK_IMPORTED_MODULE_15__["DashboardhomeComponent"]
+                _dashboardhome_dashboardhome_component__WEBPACK_IMPORTED_MODULE_15__["DashboardhomeComponent"],
+                _agent_agent_component__WEBPACK_IMPORTED_MODULE_16__["AgentComponent"],
+                _item_master_item_master_component__WEBPACK_IMPORTED_MODULE_17__["ItemMasterComponent"],
+                _store_location_store_location_component__WEBPACK_IMPORTED_MODULE_18__["StoreLocationComponent"],
+                _kisan_supplier_kisan_supplier_component__WEBPACK_IMPORTED_MODULE_19__["KisanSupplierComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
@@ -755,6 +932,119 @@ var DashboardhomeComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/item-master/item-master.component.css":
+/*!*******************************************************!*\
+  !*** ./src/app/item-master/item-master.component.css ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ""
+
+/***/ }),
+
+/***/ "./src/app/item-master/item-master.component.html":
+/*!********************************************************!*\
+  !*** ./src/app/item-master/item-master.component.html ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"content\">\n  <div class=\"container_24\">\n    <div class=\"wrapper\">\n      <div class=\"grid_24 content-bg\">\n        <div class=\"wrapper\">\n          <div class=\"page-header\">\n            <h3 class=\"cnt-head\">Product > Add Agent</h3>\n          </div>\n          <div class=\"successMsg\" *ngIf=\"successflag\">{{successMsg}}</div>\n          <div class=\"errorMsg\" *ngIf=\"errorFlag\">{{errorMsg}}</div>\n          <article class=\"grid_22 suffix_1 prefix_1 alpha omega\">\n            <div id=\"itemDetails\">\n              <form class=\"mbr-form\">\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"item_name\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Item Name</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"items.item_name\" name=\"item_name\"\n                          data-form-field=\"item_name\" required id=\"item_name\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"item_type\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Item Type</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"items.item_type\" name=\"item_type\"\n                          data-form-field=\"item_type\" required=\"\" id=\"item_type\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"item_desc\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Item Description</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"items.item_desc\" name=\"item_desc\"\n                          data-form-field=\"item_desc\" required id=\"item_desc\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"item_localname\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Item Type</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"items.item_localname\" name=\"item_localname\"\n                          data-form-field=\"item_localname\" required=\"\" id=\"item_localname\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"rate\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Rate</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"items.rate\" name=\"rate\"\n                          data-form-field=\"rate\" required id=\"rate\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"unit\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Unit</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"items.unit\" name=\"unit\"\n                          data-form-field=\"unit\" required=\"\" id=\"unit\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"mrp\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">M.R.P.</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"items.mrp\" name=\"mrp\"\n                          data-form-field=\"mrp\" required id=\"mrp\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"discount_rate\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Discount Rate</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"items.discount_rate\" name=\"discount_rate\"\n                          data-form-field=\"discount_rate\" required=\"\" id=\"discount_rate\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"effective_from\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Effective From</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"date\" class=\"form-control\" [(ngModel)]=\"items.effective_from\" name=\"effective_from\"\n                          data-form-field=\"effective_from\" required id=\"effective_from\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"brand\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Brand</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"items.brand\" name=\"brand\"\n                          data-form-field=\"brand\" required=\"\" id=\"brand\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"firstButton multi-horizontal\" >\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"saveItem()\">Save Item</button>\n                    </span>\n                  </div>\n                  <div class=\"firstButton multi-horizontal\">\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"editItem()\">Edit Item</button>\n                    </span>\n                  </div>\n                  <div class=\"firstButton multi-horizontal\">\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"deleteItem()\">Delete Item</button>\n                    </span>\n                  </div>\n                </div>\n              </form>\n            </div>\n          </article>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/item-master/item-master.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/item-master/item-master.component.ts ***!
+  \******************************************************/
+/*! exports provided: ItemMasterComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ItemMasterComponent", function() { return ItemMasterComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _kisan_portal_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../kisan-portal.service */ "./src/app/kisan-portal.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var ItemMasterComponent = /** @class */ (function () {
+    function ItemMasterComponent(kisanPortalService) {
+        this.kisanPortalService = kisanPortalService;
+        this.errorMsg = 'Unable to Save Item Details, Please Try again.';
+        this.successMsg = 'Item Details Saved Successfully.';
+        this.errorFlag = false;
+        this.successflag = false;
+        this.items = {
+            item_name: "",
+            item_type: "",
+            item_desc: "",
+            item_localname: "",
+            rate: 0.00,
+            unit: "",
+            mrp: 0,
+            discount_rate: 0.00,
+            effective_from: "",
+            brand: ""
+        };
+    }
+    ItemMasterComponent.prototype.ngOnInit = function () {
+    };
+    ItemMasterComponent.prototype.saveItem = function () {
+        var _this = this;
+        debugger;
+        console.log("Item Data : " + this.items);
+        this.kisanPortalService.saveItem(this.items).subscribe(function (data) {
+            console.log(data);
+            _this.errorFlag = false;
+            _this.successflag = false;
+            _this.successflag = true;
+            _this.clearItemData();
+            _this.successMsg = "Item Details are Saved Successfully.";
+        }, function (Error) {
+            _this.successflag = false;
+            _this.errorFlag = true;
+            _this.errorMsg = "Unable to Save Item Details, Please Try again.";
+        });
+    };
+    ItemMasterComponent.prototype.clearItemData = function () {
+        this.items = {
+            item_name: "",
+            item_type: "",
+            item_desc: "",
+            item_localname: "",
+            rate: 0.00,
+            unit: "",
+            mrp: 0.00,
+            discount_rate: 0.00,
+            effective_from: "",
+            brand: ""
+        };
+    };
+    ItemMasterComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-item-master',
+            template: __webpack_require__(/*! ./item-master.component.html */ "./src/app/item-master/item-master.component.html"),
+            styles: [__webpack_require__(/*! ./item-master.component.css */ "./src/app/item-master/item-master.component.css")]
+        }),
+        __metadata("design:paramtypes", [_kisan_portal_service__WEBPACK_IMPORTED_MODULE_1__["KisanPortalService"]])
+    ], ItemMasterComponent);
+    return ItemMasterComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/kisan-dashboard/kisan-dashboard.component.css":
 /*!***************************************************************!*\
   !*** ./src/app/kisan-dashboard/kisan-dashboard.component.css ***!
@@ -773,7 +1063,7 @@ module.exports = "/* Dropdown Button */\r\n.dropbtn {\r\n    color: white;\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <div class=\"inner\">\n    <h1 class=\"logo\"><a href=\"javascript:void(0)\" (click)=\"showDashboardHome()\">Kisan - Project</a></h1>\n    <nav>\n      <ul class=\"sf-menu sf-js-enabled\">\n        <li id=\"homeLi\" class=\"current\"><a href=\"javascript:void(0)\" (click)=\"showDashboardHome()\">home</a></li>\n        <li id=\"searchFarmerLi\" class=\"dropdown\"><a href=\"javascript:void(0)\" class=\"dropbtn\" >Farmer</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addFarmer(this)\">Add Farmer</a></li>\n            <li><a href=\"javascript:void(0)\">Edit Farmer</a></li>\n            <li> <a href=\"javascript:void(0)\">Delete Farmer</a></li>\n          </ul>\n        </li>\n        <li class=\"dropdown\"> <a href=\"javascript:void(0)\" class=\"dropbtn\" >Product</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addProduct(this)\">Add Product</a></li>\n            <li><a href=\"javascript:void(0)\">Edit Product</a></li>\n            <li> <a href=\"javascript:void(0)\">Delete Product</a></li>\n          </ul>\n        </li>\n        <li class=\"dropdown\"> <a href=\"javascript:void(0)\" class=\"dropbtn\" >User</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addUser(this)\">Add User</a></li>\n            <li><a href=\"javascript:void(0)\">Update User</a></li>\n            <li> <a href=\"javascript:void(0)\">Delete User</a></li>\n          </ul>\n        </li>\n        <li><a href=\"javascript:void(0)\">contacts</a></li>\n      </ul>\n    </nav>\n    <div class=\"clear\"></div>\n  </div>\n  <!-- <div id=\"slider-main\" *ngIf=\"dashboardHome\">\n  <div class=\"slider-container\">\n      <div class=\"mp-slider\" style=\"z-index: 1; overflow: hidden;\">\n        <ul class=\"items\">\n          <li style=\"display: none;\"><img src=\"assets/images/slide-1.jpg\" alt=\"\">\n            \n          </li>\n          <li style=\"display: none;\"><img src=\"assets/images/slide-2.jpg\" alt=\"\">\n            \n          </li>\n          <li style=\"display: none;\"><img src=\"assets/images/slide-3.jpg\" alt=\"\">\n            \n          </li>\n        </ul>\n      <div class=\"pic\" style=\"overflow: hidden; width: 950px; height: 511px; background: url(&quot;assets/images/slide-3.jpg&quot;) 0px 0px no-repeat;\">\n        <div class=\"mask\" style=\"position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 1;\">\n          <div style=\"left: 0px; top: 0px; position: absolute; width: 950px; height: 511px; background-position: 0px 0px; background-image: url(&quot;assets/images/slide-1.jpg&quot;); opacity: 0.241;\">\n          </div>\n        </div>\n      </div>\n      <div class=\"banner mp-ban-3\" style=\"z-index: 999; display: block; opacity: 0.567009;\">\n        <span class=\"row-1\">growing clean</span>\n        <span class=\"row-2\">and full of health</span>\n        <span class=\"row-3\">products</span>\n      </div>\n    </div>\n    </div>\n    <a href=\"javascript:void(0)\" class=\"mp-prev\"></a>\n    <a href=\"javascript:void(0)\" class=\"mp-next\"></a>\n  </div> -->\n</header>\n<router-outlet></router-outlet>"
+module.exports = "<header>\n  <div class=\"inner\">\n    <h1 class=\"logo\"><a href=\"javascript:void(0)\" (click)=\"showDashboardHome()\">Kisan - Project</a></h1>\n    <nav>\n      <ul class=\"sf-menu sf-js-enabled\">\n        <li id=\"homeLi\" class=\"current\"><a href=\"javascript:void(0)\" (click)=\"showDashboardHome()\">home</a></li>\n        <li id=\"searchFarmerLi\" class=\"dropdown\"><a href=\"javascript:void(0)\" class=\"dropbtn\" >Farmer</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addFarmer(this)\">Add Farmer</a></li>\n            <li><a href=\"javascript:void(0)\">Edit Farmer</a></li>\n            <li> <a href=\"javascript:void(0)\">Delete Farmer</a></li>\n          </ul>\n        </li>\n        <li class=\"dropdown\"> <a href=\"javascript:void(0)\" class=\"dropbtn\" >Product</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addProduct(this)\">Add Product</a></li>\n            <li><a href=\"javascript:void(0)\">Edit Product</a></li>\n            <li> <a href=\"javascript:void(0)\">Delete Product</a></li>\n          </ul>\n        </li>\n        <li class=\"dropdown\"> <a href=\"javascript:void(0)\" class=\"dropbtn\" >User</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addUser(this)\">Add User</a></li>\n            <li><a href=\"javascript:void(0)\" (click)=\"addAgent(this)\">Add Agent</a></li>\n            <li> <a href=\"javascript:void(0)\" (click)=\"addItem(this)\">Add Item</a></li>\n            <li> <a href=\"javascript:void(0)\" (click)=\"addLocation(this)\">Add Location</a></li>\n            <li> <a href=\"javascript:void(0)\" (click)=\"addSupplier(this)\">Add Supplier</a></li>\n          </ul>\n        </li>\n        <li><a href=\"javascript:void(0)\">contacts</a></li>\n      </ul>\n    </nav>\n    <div class=\"clear\"></div>\n  </div>\n  <!-- <div id=\"slider-main\" *ngIf=\"dashboardHome\">\n  <div class=\"slider-container\">\n      <div class=\"mp-slider\" style=\"z-index: 1; overflow: hidden;\">\n        <ul class=\"items\">\n          <li style=\"display: none;\"><img src=\"assets/images/slide-1.jpg\" alt=\"\">\n            \n          </li>\n          <li style=\"display: none;\"><img src=\"assets/images/slide-2.jpg\" alt=\"\">\n            \n          </li>\n          <li style=\"display: none;\"><img src=\"assets/images/slide-3.jpg\" alt=\"\">\n            \n          </li>\n        </ul>\n      <div class=\"pic\" style=\"overflow: hidden; width: 950px; height: 511px; background: url(&quot;assets/images/slide-3.jpg&quot;) 0px 0px no-repeat;\">\n        <div class=\"mask\" style=\"position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 1;\">\n          <div style=\"left: 0px; top: 0px; position: absolute; width: 950px; height: 511px; background-position: 0px 0px; background-image: url(&quot;assets/images/slide-1.jpg&quot;); opacity: 0.241;\">\n          </div>\n        </div>\n      </div>\n      <div class=\"banner mp-ban-3\" style=\"z-index: 999; display: block; opacity: 0.567009;\">\n        <span class=\"row-1\">growing clean</span>\n        <span class=\"row-2\">and full of health</span>\n        <span class=\"row-3\">products</span>\n      </div>\n    </div>\n    </div>\n    <a href=\"javascript:void(0)\" class=\"mp-prev\"></a>\n    <a href=\"javascript:void(0)\" class=\"mp-next\"></a>\n  </div> -->\n</header>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -867,6 +1157,34 @@ var KisanDashboardComponent = /** @class */ (function () {
         jquery__WEBPACK_IMPORTED_MODULE_2__(el).parents('li .dropdown').addClass('current');
         this.router.navigateByUrl('kisanDashboard/addUser');
     };
+    KisanDashboardComponent.prototype.addAgent = function (el) {
+        this.dashboardHome = false;
+        jquery__WEBPACK_IMPORTED_MODULE_2__('.current').removeClass('current');
+        // $('#searchFarmerLi').addClass('current');
+        jquery__WEBPACK_IMPORTED_MODULE_2__(el).parents('li .dropdown').addClass('current');
+        this.router.navigateByUrl('kisanDashboard/addAgent');
+    };
+    KisanDashboardComponent.prototype.addItem = function (el) {
+        this.dashboardHome = false;
+        jquery__WEBPACK_IMPORTED_MODULE_2__('.current').removeClass('current');
+        // $('#searchFarmerLi').addClass('current');
+        jquery__WEBPACK_IMPORTED_MODULE_2__(el).parents('li .dropdown').addClass('current');
+        this.router.navigateByUrl('kisanDashboard/addItem');
+    };
+    KisanDashboardComponent.prototype.addLocation = function (el) {
+        this.dashboardHome = false;
+        jquery__WEBPACK_IMPORTED_MODULE_2__('.current').removeClass('current');
+        // $('#searchFarmerLi').addClass('current');
+        jquery__WEBPACK_IMPORTED_MODULE_2__(el).parents('li .dropdown').addClass('current');
+        this.router.navigateByUrl('kisanDashboard/addLocation');
+    };
+    KisanDashboardComponent.prototype.addSupplier = function (el) {
+        this.dashboardHome = false;
+        jquery__WEBPACK_IMPORTED_MODULE_2__('.current').removeClass('current');
+        // $('#searchFarmerLi').addClass('current');
+        jquery__WEBPACK_IMPORTED_MODULE_2__(el).parents('li .dropdown').addClass('current');
+        this.router.navigateByUrl('kisanDashboard/addSupplier');
+    };
     KisanDashboardComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'app-kisan-dashboard',
@@ -957,7 +1275,7 @@ var KisanLoginComponent = /** @class */ (function () {
     };
     KisanLoginComponent.prototype.login = function () {
         var _this = this;
-        debugger;
+        //debugger;
         if (this.userLoginData.userId == undefined || this.userLoginData.userId == '') {
             this.errorFlag = true;
             this.errorMsg = 'Please enter valid username';
@@ -1050,6 +1368,10 @@ var KisanPortalService = /** @class */ (function () {
         this.saveFarmerUrl = 'http://localhost:8080/SaveFarmer';
         this.saveUserUrl = 'http://localhost:8080/Saveuser';
         this.getTransactionUrl = 'http://localhost:8080/getTransaction';
+        this.saveAgentUrl = 'http://localhost:8080/SaveAgent';
+        this.saveItemUrl = 'http://localhost:8080/Saveitem';
+        this.saveLocationUrl = 'http://localhost:8080/SaveLocation';
+        this.saveSupplierUrl = 'http://localhost:8080/SaveSupplier';
     }
     KisanPortalService.prototype.setLoginsuccess = function (loginsuccess) {
         this.loginsuccess = loginsuccess;
@@ -1076,6 +1398,18 @@ var KisanPortalService = /** @class */ (function () {
     KisanPortalService.prototype.saveUser = function (userData) {
         return this.http.post(this.saveUserUrl, userData);
     };
+    KisanPortalService.prototype.saveAgent = function (agentData) {
+        return this.http.post(this.saveAgentUrl, agentData);
+    };
+    KisanPortalService.prototype.saveItem = function (itemData) {
+        return this.http.post(this.saveItemUrl, itemData);
+    };
+    KisanPortalService.prototype.saveLocation = function (locationData) {
+        return this.http.post(this.saveLocationUrl, locationData);
+    };
+    KisanPortalService.prototype.saveSupplier = function (supplierData) {
+        return this.http.post(this.saveSupplierUrl, supplierData);
+    };
     KisanPortalService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
@@ -1083,6 +1417,203 @@ var KisanPortalService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"]])
     ], KisanPortalService);
     return KisanPortalService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/kisan-supplier/kisan-supplier.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/kisan-supplier/kisan-supplier.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = ".checkAddress{\r\n    padding-top: 10px;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/kisan-supplier/kisan-supplier.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/kisan-supplier/kisan-supplier.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"content\">\n  <div class=\"container_24\">\n    <div class=\"wrapper\">\n      <div class=\"grid_24 content-bg\">\n        <div class=\"wrapper\">\n          <div class=\"page-header\">\n            <h3 class=\"cnt-head\">Product > Add Supplier</h3>\n          </div>\n          <div class=\"successMsg\" *ngIf=\"successflag\">{{successMsg}}</div>\n          <div class=\"errorMsg\" *ngIf=\"errorFlag\">{{errorMsg}}</div>\n          <article class=\"grid_22 suffix_1 prefix_1 alpha omega\">\n            <div id=\"supplierDetails\">\n              <form class=\"mbr-form\">\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"supplierId\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Supplier Id</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.supplierId\" name=\"supplierId\"\n                          data-form-field=\"supplierId\" required id=\"supplierId\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"supplierName\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Supplier Name</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.supplierName\" name=\"supplierName\"\n                          data-form-field=\"supplierName\" required=\"\" id=\"supplierName\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"supplierType\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Supplier Type</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.supplierType\" name=\"supplierType\"\n                          data-form-field=\"supplierType\" required id=\"supplierType\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"userId\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">User Id</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.userId\" name=\"userId\"\n                          data-form-field=\"userId\" required=\"\" id=\"userId\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"vehicle\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Supplier Id</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.vehicle\" name=\"vehicle\"\n                          data-form-field=\"vehicle\" required id=\"vehicle\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"sub-header\">\n                  <h5>Billing Address Details : </h5>\n                  <hr>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine1\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Line1</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.addressLine1\" name=\"addressLine1\"\n                          data-form-field=\"addressLine1\" required id=\"addressLine1\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine2\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Line2</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.addressLine2\"\n                          name=\"addressLine2\" data-form-field=\"addressLine2\" required=\"\" id=\"addressLine2\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine3\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">addressLine3</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.addressLine3\" name=\"addressLine3\"\n                          data-form-field=\"addressLine3\" required id=\"addressLine3\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"city\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">City</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.city\" name=\"city\"\n                          data-form-field=\"city\" required=\"\" id=\"city\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"state\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">State</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.state\" name=\"state\"\n                          data-form-field=\"state\" required id=\"state\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"pin\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Pin</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.pin\" name=\"pin\"\n                          data-form-field=\"pin\" required=\"\" id=\"pin\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"email\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Email Id</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.email\" name=\"email\"\n                          data-form-field=\"email\" required id=\"email\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"mobileNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Mobile Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.mobileNum\" name=\"mobileNum\"\n                          data-form-field=\"mobileNum\" required=\"\" id=\"mobileNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"altMobileNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Alternate Mobile Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.altMobileNum\" name=\"altMobileNum\"\n                          data-form-field=\"altMobileNum\" required id=\"altMobileNum\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"residencePhNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Residence Phone Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.residencePhNum\"\n                          name=\"residencePhNum\" data-form-field=\"residencePhNum\" required=\"\" id=\"residencePhNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"officePhNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Office Phone Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.addressDetails.officePhNum\" name=\"officePhNum\"\n                          data-form-field=\"officePhNum\" required id=\"officePhNum\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressCheck\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-7 col-form-label form-control-label\">Check If Delivery Address is same as Billing Address</label>\n                      <div class=\"col-lg-3 checkAddress\">\n                        <input type=\"checkbox\" class=\"form-control\" [(ngModel)]=\"addressCheckFlag\" (change)=\"addressCheck()\" name=\"addressCheck\"\n                          data-form-field=\"addressCheck\" required id=\"addressCheck\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"sub-header\">\n                  <h5>Delivery Address Details : </h5>\n                  <hr>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine1\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Line1</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.addressLine1\" name=\"addressLine1\"\n                          data-form-field=\"addressLine1\" required id=\"addressLine1\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine2\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Line2</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.addressLine2\"\n                          name=\"addressLine2\" data-form-field=\"addressLine2\" required=\"\" id=\"addressLine2\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine3\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">addressLine3</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.addressLine3\" name=\"addressLine3\"\n                          data-form-field=\"addressLine3\" required id=\"addressLine3\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"city\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">City</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.city\" name=\"city\"\n                          data-form-field=\"city\" required=\"\" id=\"city\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"state\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">State</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.state\" name=\"state\"\n                          data-form-field=\"state\" required id=\"state\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"pin\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Pin</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.pin\" name=\"pin\"\n                          data-form-field=\"pin\" required=\"\" id=\"pin\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"email\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Email Id</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.email\" name=\"email\"\n                          data-form-field=\"email\" required id=\"email\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"mobileNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Mobile Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.mobileNum\" name=\"mobileNum\"\n                          data-form-field=\"mobileNum\" required=\"\" id=\"mobileNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"altMobileNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Alternate Mobile Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.altMobileNum\" name=\"altMobileNum\"\n                          data-form-field=\"altMobileNum\" required id=\"altMobileNum\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"residencePhNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Residence Phone Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.residencePhNum\"\n                          name=\"residencePhNum\" data-form-field=\"residencePhNum\" required=\"\" id=\"residencePhNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"officePhNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Office Phone Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"supplier.deliveryaddressDetails.officePhNum\" name=\"officePhNum\"\n                          data-form-field=\"officePhNum\" required id=\"officePhNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"sub-header\">\n                  <h5>Registration Details : </h5>\n                  <hr>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"pan\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">PAN</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.registrationInfo.pan\" name=\"pan\"\n                          data-form-field=\"pan\" required id=\"pan\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"tin\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">TIN</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.registrationInfo.tin\" name=\"tin\"\n                          data-form-field=\"tin\" required id=\"tin\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"gst\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">GST</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.registrationInfo.gst\" name=\"gst\"\n                          data-form-field=\"gst\" required id=\"gst\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"cst\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">CST</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.registrationInfo.cst\" name=\"cst\"\n                          data-form-field=\"cst\" required id=\"cst\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"licenceNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Licence Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"supplier.registrationInfo.licenceNum\" name=\"licenceNum\"\n                          data-form-field=\"licenceNum\" required id=\"licenceNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"firstButton multi-horizontal\" >\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"saveSupplier()\">Save Supplier</button>\n                    </span>\n                  </div>\n                  <div class=\"firstButton multi-horizontal\">\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"editSupplier()\">Edit Supplier</button>\n                    </span>\n                  </div>\n                  <div class=\"firstButton multi-horizontal\">\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"deleteSupplier()\">Delete Supplier</button>\n                    </span>\n                  </div>\n                </div>\n              </form>\n            </div>\n          </article>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/kisan-supplier/kisan-supplier.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/kisan-supplier/kisan-supplier.component.ts ***!
+  \************************************************************/
+/*! exports provided: KisanSupplierComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "KisanSupplierComponent", function() { return KisanSupplierComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _kisan_portal_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../kisan-portal.service */ "./src/app/kisan-portal.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var KisanSupplierComponent = /** @class */ (function () {
+    function KisanSupplierComponent(kisanPortalService) {
+        this.kisanPortalService = kisanPortalService;
+        this.errorMsg = 'Unable to Save Supplier Details, Please Try again.';
+        this.successMsg = 'Supplier Details Saved Successfully.';
+        this.errorFlag = false;
+        this.successflag = false;
+        this.addressCheckFlag = false;
+        this.supplier = {
+            supplierId: 0,
+            supplierName: "",
+            supplierType: "",
+            userId: "",
+            vehicle: "",
+            addressDetails: {
+                addressLine1: "",
+                addressLine2: "",
+                addressLine3: "",
+                city: "",
+                state: "",
+                pin: 0,
+                emain: "",
+                mobileNum: 0,
+                altMobileNum: 0,
+                residencePhNum: 0,
+                officePhNum: 0,
+                addressType: ""
+            },
+            registrationInfo: {
+                pan: "",
+                tin: "",
+                gst: "",
+                cst: "",
+                licenceNum: ""
+            },
+            deliveryaddressDetails: {
+                addressLine1: "",
+                addressLine2: "",
+                addressLine3: "",
+                city: "",
+                state: "",
+                pin: 0,
+                emain: "",
+                mobileNum: 0,
+                altMobileNum: 0,
+                residencePhNum: 0,
+                officePhNum: 0,
+                addressType: ""
+            }
+        };
+    }
+    KisanSupplierComponent.prototype.ngOnInit = function () {
+    };
+    KisanSupplierComponent.prototype.saveSupplier = function () {
+        var _this = this;
+        debugger;
+        console.log("supplier Data : " + this.supplier);
+        this.kisanPortalService.saveSupplier(this.supplier).subscribe(function (data) {
+            console.log(data);
+            _this.errorFlag = false;
+            _this.successflag = false;
+            _this.successflag = true;
+            _this.clearSupplierData();
+            _this.successMsg = "supplier Details are Saved Successfully.";
+        }, function (Error) {
+            _this.successflag = false;
+            _this.errorFlag = true;
+            _this.errorMsg = "Unable to Save supplier Details, Please Try again.";
+        });
+    };
+    KisanSupplierComponent.prototype.clearSupplierData = function () {
+        this.supplier = {
+            supplierId: 0,
+            supplierName: "",
+            supplierType: "",
+            userId: "",
+            vehicle: "",
+            addressDetails: {
+                addressLine1: "",
+                addressLine2: "",
+                addressLine3: "",
+                city: "",
+                state: "",
+                pin: 0,
+                emain: "",
+                mobileNum: 0,
+                altMobileNum: 0,
+                residencePhNum: 0,
+                officePhNum: 0,
+                addressType: ""
+            },
+            registrationInfo: {
+                pan: "",
+                tin: "",
+                gst: "",
+                cst: "",
+                licenceNum: ""
+            },
+            deliveryaddressDetails: {
+                addressLine1: "",
+                addressLine2: "",
+                addressLine3: "",
+                city: "",
+                state: "",
+                pin: 0,
+                emain: "",
+                mobileNum: 0,
+                altMobileNum: 0,
+                residencePhNum: 0,
+                officePhNum: 0,
+                addressType: ""
+            }
+        };
+    };
+    KisanSupplierComponent.prototype.addressCheck = function () {
+        debugger;
+        console.log(this.addressCheckFlag);
+        if (this.addressCheckFlag == true) {
+            this.supplier.deliveryaddressDetails = this.supplier.addressDetails;
+        }
+        else {
+            this.supplier.deliveryaddressDetails = {
+                addressLine1: "",
+                addressLine2: "",
+                addressLine3: "",
+                city: "",
+                state: "",
+                pin: 0,
+                emain: "",
+                mobileNum: 0,
+                altMobileNum: 0,
+                residencePhNum: 0,
+                officePhNum: 0,
+                addressType: ""
+            };
+        }
+    };
+    KisanSupplierComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-kisan-supplier',
+            template: __webpack_require__(/*! ./kisan-supplier.component.html */ "./src/app/kisan-supplier/kisan-supplier.component.html"),
+            styles: [__webpack_require__(/*! ./kisan-supplier.component.css */ "./src/app/kisan-supplier/kisan-supplier.component.css")]
+        }),
+        __metadata("design:paramtypes", [_kisan_portal_service__WEBPACK_IMPORTED_MODULE_1__["KisanPortalService"]])
+    ], KisanSupplierComponent);
+    return KisanSupplierComponent;
 }());
 
 
@@ -1189,6 +1720,155 @@ var RenderCellComponent = /** @class */ (function () {
         })
     ], RenderCellComponent);
     return RenderCellComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/store-location/store-location.component.css":
+/*!*************************************************************!*\
+  !*** ./src/app/store-location/store-location.component.css ***!
+  \*************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "hr{\r\n    border:1px solid white;\r\n    margin: 0px;\r\n}\r\n.sub-header{\r\n    padding-top: 15px;\r\n    text-align: center;\r\n}"
+
+/***/ }),
+
+/***/ "./src/app/store-location/store-location.component.html":
+/*!**************************************************************!*\
+  !*** ./src/app/store-location/store-location.component.html ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = "<section id=\"content\">\n  <div class=\"container_24\">\n    <div class=\"wrapper\">\n      <div class=\"grid_24 content-bg\">\n        <div class=\"wrapper\">\n          <div class=\"page-header\">\n            <h3 class=\"cnt-head\">Product > Add Location</h3>\n          </div>\n          <div class=\"successMsg\" *ngIf=\"successflag\">{{successMsg}}</div>\n          <div class=\"errorMsg\" *ngIf=\"errorFlag\">{{errorMsg}}</div>\n          <article class=\"grid_22 suffix_1 prefix_1 alpha omega\">\n            <div id=\"locationDetails\">\n              <form class=\"mbr-form\">\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"locName\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Location Name</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.locName\" name=\"locName\"\n                          data-form-field=\"locName\" required id=\"locName\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"locType\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Location Type</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.locType\" name=\"locType\"\n                          data-form-field=\"locType\" required=\"\" id=\"locType\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"description\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Description</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.description\" name=\"description\"\n                          data-form-field=\"description\" required id=\"description\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"accountNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Account Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.accountNum\" name=\"accountNum\"\n                          data-form-field=\"accountNum\" required id=\"accountNum\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"accountName\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Account Name</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.accountName\" name=\"accountName\"\n                          data-form-field=\"accountName\" required=\"\" id=\"accountName\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"bankName\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Bank Name</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.bankName\" name=\"bankName\"\n                          data-form-field=\"bankName\" required id=\"bankName\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"ifscCode\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">IFSC Code</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.ifscCode\" name=\"ifscCode\"\n                          data-form-field=\"ifscCode\" required=\"\" id=\"ifscCode\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"sub-header\">\n                  <h5>Address Details : </h5>\n                  <hr>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine1\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Line1</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.addressLine1\" name=\"addressLine1\"\n                          data-form-field=\"addressLine1\" required id=\"addressLine1\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine2\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Line2</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.addressLine2\"\n                          name=\"addressLine2\" data-form-field=\"addressLine2\" required=\"\" id=\"addressLine2\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressLine3\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">addressLine3</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.addressLine3\" name=\"addressLine3\"\n                          data-form-field=\"addressLine3\" required id=\"addressLine3\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"city\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">City</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.city\" name=\"city\"\n                          data-form-field=\"city\" required=\"\" id=\"city\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"state\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">State</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.state\" name=\"state\"\n                          data-form-field=\"state\" required id=\"state\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"pin\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Pin</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.pin\" name=\"pin\"\n                          data-form-field=\"pin\" required=\"\" id=\"pin\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"email\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Email Id</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.email\" name=\"email\"\n                          data-form-field=\"email\" required id=\"email\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"mobileNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Mobile Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.mobileNum\" name=\"mobileNum\"\n                          data-form-field=\"mobileNum\" required=\"\" id=\"mobileNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"altMobileNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Alternate Mobile Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.altMobileNum\" name=\"altMobileNum\"\n                          data-form-field=\"altMobileNum\" required id=\"altMobileNum\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"residencePhNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Residence Phone Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.residencePhNum\"\n                          name=\"residencePhNum\" data-form-field=\"residencePhNum\" required=\"\" id=\"residencePhNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"officePhNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Office Phone Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"number\" class=\"form-control\" [(ngModel)]=\"location.addressDetails.officePhNum\" name=\"officePhNum\"\n                          data-form-field=\"officePhNum\" required id=\"officePhNum\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"addressType\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Address Type</label>\n                      <div class=\"col-lg-7\">\n                        <div style=\"float: left\">\n                          <input type=\"radio\" value=\"B\" name=\"addressType\" [(ngModel)]=\"location.addressDetails.addressType\">\n                          Billing\n                        </div>\n                        <div style=\"padding-left: 75px;\">\n                          <input type=\"radio\" value=\"D\" name=\"addressType\" [(ngModel)]=\"location.addressDetails.addressType\">\n                          Delivery\n                        </div>\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"sub-header\">\n                  <h5>Registration Details : </h5>\n                  <hr>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"pan\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">PAN</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.registrationInfo.pan\" name=\"pan\"\n                          data-form-field=\"pan\" required id=\"pan\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"tin\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">TIN</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.registrationInfo.tin\" name=\"tin\"\n                          data-form-field=\"tin\" required id=\"tin\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"gst\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">GST</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.registrationInfo.gst\" name=\"gst\"\n                          data-form-field=\"gst\" required id=\"gst\">\n                      </div>\n                    </div>\n                  </div>\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"cst\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">CST</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.registrationInfo.cst\" name=\"cst\"\n                          data-form-field=\"cst\" required id=\"cst\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"col-md-6 multi-horizontal\" data-for=\"licenceNum\">\n                    <div class=\"form-group row\">\n                      <label class=\"col-lg-4 col-form-label form-control-label\">Licence Number</label>\n                      <div class=\"col-lg-7\">\n                        <input type=\"text\" class=\"form-control\" [(ngModel)]=\"location.registrationInfo.licenceNum\" name=\"licenceNum\"\n                          data-form-field=\"licenceNum\" required id=\"licenceNum\">\n                      </div>\n                    </div>\n                  </div>\n                </div>\n                <div class=\"row row-sm-offset\">\n                  <div class=\"firstButton multi-horizontal\" >\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"saveLocation()\">Save Location</button>\n                    </span>\n                  </div>\n                  <div class=\"firstButton multi-horizontal\">\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"editLocation()\">Edit Location</button>\n                    </span>\n                  </div>\n                  <div class=\"firstButton multi-horizontal\">\n                    <span class=\"input-group-btn\">\n                      <button type=\"submit\" class=\"btn btn-primary btn-form display-5\" (click)=\"deleteLocation()\">Delete Location</button>\n                    </span>\n                  </div>\n                </div>\n              </form>\n            </div>\n          </article>\n        </div>\n      </div>\n    </div>\n  </div>\n</section>"
+
+/***/ }),
+
+/***/ "./src/app/store-location/store-location.component.ts":
+/*!************************************************************!*\
+  !*** ./src/app/store-location/store-location.component.ts ***!
+  \************************************************************/
+/*! exports provided: StoreLocationComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StoreLocationComponent", function() { return StoreLocationComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _kisan_portal_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../kisan-portal.service */ "./src/app/kisan-portal.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var StoreLocationComponent = /** @class */ (function () {
+    function StoreLocationComponent(kisanPortalService) {
+        this.kisanPortalService = kisanPortalService;
+        this.errorMsg = 'Unable to Save Location Details, Please Try again.';
+        this.successMsg = 'Location Details Saved Successfully.';
+        this.errorFlag = false;
+        this.successflag = false;
+        this.location = {
+            locName: "",
+            locType: "",
+            description: "",
+            addressDetails: {
+                addressLine1: "",
+                addressLine2: "",
+                addressLine3: "",
+                city: "",
+                state: "",
+                pin: 0,
+                emain: "",
+                mobileNum: 0,
+                altMobileNum: 0,
+                residencePhNum: 0,
+                officePhNum: 0,
+                addressType: ""
+            },
+            registrationInfo: {
+                pan: "",
+                tin: "",
+                gst: "",
+                cst: "",
+                licenceNum: ""
+            },
+            accountNum: "",
+            accountName: "",
+            bankName: "",
+            ifscCode: ""
+        };
+    }
+    StoreLocationComponent.prototype.ngOnInit = function () {
+    };
+    StoreLocationComponent.prototype.saveLocation = function () {
+        var _this = this;
+        debugger;
+        console.log("Location Data : " + this.location);
+        this.kisanPortalService.saveLocation(this.location).subscribe(function (data) {
+            console.log(data);
+            _this.errorFlag = false;
+            _this.successflag = false;
+            _this.successflag = true;
+            _this.clearlocationData();
+            _this.successMsg = "Location Details are Saved Successfully.";
+        }, function (Error) {
+            _this.successflag = false;
+            _this.errorFlag = true;
+            _this.errorMsg = "Unable to Save Location Details, Please Try again.";
+        });
+    };
+    StoreLocationComponent.prototype.clearlocationData = function () {
+        this.location = {
+            locName: "",
+            locType: "",
+            description: "",
+            addressDetails: {
+                addressLine1: "",
+                addressLine2: "",
+                addressLine3: "",
+                city: "",
+                state: "",
+                pin: 0,
+                emain: "",
+                mobileNum: 0,
+                altMobileNum: 0,
+                residencePhNum: 0,
+                officePhNum: 0,
+                addressType: ""
+            },
+            registrationInfo: {
+                pan: "",
+                tin: "",
+                gst: "",
+                cst: "",
+                licenceNum: ""
+            },
+            accountNum: "",
+            accountName: "",
+            bankName: "",
+            ifscCode: ""
+        };
+    };
+    StoreLocationComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-store-location',
+            template: __webpack_require__(/*! ./store-location.component.html */ "./src/app/store-location/store-location.component.html"),
+            styles: [__webpack_require__(/*! ./store-location.component.css */ "./src/app/store-location/store-location.component.css")]
+        }),
+        __metadata("design:paramtypes", [_kisan_portal_service__WEBPACK_IMPORTED_MODULE_1__["KisanPortalService"]])
+    ], StoreLocationComponent);
+    return StoreLocationComponent;
 }());
 
 
