@@ -24,17 +24,33 @@ public class TransactionController {
 		transactionService.saveTransaction(transaction);
 		return ResponseEntity.noContent().build();
 	}
+	
 	@GetMapping("/Transaction/{barCode}")
 	@CrossOrigin
-	public TransactionDetails getTransaction(@PathVariable("barCode") String barCode ){
+	public TransactionDetails getTransaction(@PathVariable("barCode") int barCode ){
 		TransactionDetails transaction = new TransactionDetails();
 		try{
-			BigInteger transId = new BigInteger(barCode);
-			logger.info("Barcode  :"+transId);
-			transaction = transactionService.getTransaction(transId);
+		//	BigInteger transId = new BigInteger(barCode);
+			logger.info("Barcode  :"+barCode);
+			transaction = transactionService.getTransaction(barCode);
 		}catch(Exception e){
 			logger.error("Exception in Get transaction "+e.getMessage());
 		}
 		return transaction;
+	}
+	
+	@PostMapping("/EditTransaction")
+	@CrossOrigin
+	public ResponseEntity<Object> editItem(@RequestBody TransactionDetails transaction) {
+		transactionService.saveTransaction(transaction);
+		return ResponseEntity.noContent().build();
+	}
+	
+	
+	@PostMapping("/DeleteTransaction/{barCode}")
+	@CrossOrigin
+	public ResponseEntity<Object> deleteItem(@PathVariable int barCode ) {
+		transactionService.deleteTransaction(barCode);
+		return ResponseEntity.noContent().build();
 	}
 }

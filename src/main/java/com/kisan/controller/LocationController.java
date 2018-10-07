@@ -31,5 +31,13 @@ public class LocationController {
 		locService.saveLocationDetails(locationMst);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@GetMapping("/Locations/{locId}")
+	@CrossOrigin
+	public ResponseEntity<Object> deleteLocationDetails (@PathVariable int locId) {
+		
+	    locService.deleteLocationDetails(locId);
+		return ResponseEntity.noContent().build();
+	}
 
 }

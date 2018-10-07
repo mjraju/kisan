@@ -31,5 +31,13 @@ public class SupplierController {
 		supplierService.saveSupplierDetails(supplierMst);
 		return ResponseEntity.noContent().build();
 	}
+	
+	
+	@PostMapping("/DeleteSupplier/{supplierId}")
+	@CrossOrigin
+	public ResponseEntity<Object> deleteItem(@PathVariable int supplierId) {
+		supplierService.deleteSupplierDetails(supplierId);
+		return ResponseEntity.noContent().build();
+	}
 
 }

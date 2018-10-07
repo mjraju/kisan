@@ -33,5 +33,17 @@ public class CustomerServiceImpl implements CustomerService {
 		}
 		return null;
 	}
+	
+	
+	@Override
+	public void deleteCustomerDetails(int custId) {
+		// TODO Auto-generated method stub
+		try {
+			custRepo.delete(custId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 
 }

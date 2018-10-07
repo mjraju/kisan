@@ -32,5 +32,12 @@ public class AgentConroller {
 		return ResponseEntity.noContent().build();
 	}
 
+	
+	@GetMapping("/Agents/{agentId}")
+	@CrossOrigin
+	public ResponseEntity<Object> deleteAgentDetails (@PathVariable int agentId) {
+		agentService.deleteAgentDetails(agentId);
+		return ResponseEntity.noContent().build();
+	}
 
 }

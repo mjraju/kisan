@@ -40,6 +40,15 @@ public class ItemMasterController {
 		itemService.saveItem(itemObject);
 		return ResponseEntity.noContent().build();
 	}
+	
+	
+	@GetMapping("/Items/{itemId}")
+	@CrossOrigin
+	public ResponseEntity<Object> deleteItemDetails (@PathVariable int itemId) {
+		
+		itemService.deleteItemDetails(itemId);
+		return ResponseEntity.noContent().build();
+	}
 
 
 }

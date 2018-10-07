@@ -12,4 +12,6 @@ public interface ItemService {
 	
 	public List<ItemMaster> getItemsList();
 
+	public void deleteItemDetails(int itemId);
+
 }

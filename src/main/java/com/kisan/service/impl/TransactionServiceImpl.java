@@ -29,7 +29,7 @@ public class TransactionServiceImpl implements TransactionService {
         }
     }
 
-    public TransactionDetails getTransaction(BigInteger barCode) {
+    public TransactionDetails getTransaction(int barCode) {
         TransactionDetails transaction = new TransactionDetails();
         try {
             transaction =  transactionRepo.findByTransId(barCode);
@@ -38,6 +38,17 @@ public class TransactionServiceImpl implements TransactionService {
             logger.error(e.getStackTrace());
         }
         return transaction;
+    }
+    
+    
+    @Override
+    public void deleteTransaction(int transaction) {
+        try {
+                transactionRepo.delete(transaction);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }

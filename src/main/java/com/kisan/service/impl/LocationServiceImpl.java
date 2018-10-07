@@ -34,5 +34,16 @@ public class LocationServiceImpl implements LocationService {
 		}
 		return null;
 	}
+	
+	@Override
+	public void deleteLocationDetails(int locId) {
+		// TODO Auto-generated method stub
+		try {
+			locationRepo.delete(locId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 
 }

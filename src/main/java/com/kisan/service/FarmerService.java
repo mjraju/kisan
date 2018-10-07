@@ -7,4 +7,6 @@ public interface FarmerService {
 	public void saveFarmerDetails(FarmerMaster farmerMst);
 	
 	public FarmerMaster getFarmerDetails(int farmerId);
+
+	public void deleteFarmerDetails(int farmerId);
 }

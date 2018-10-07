@@ -8,4 +8,6 @@ public interface LocationService {
 	
 	public LocationMaster getLocationDetails(int locId);
 
+	public void deleteLocationDetails(int locId);
+
 }

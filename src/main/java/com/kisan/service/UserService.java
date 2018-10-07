@@ -8,4 +8,6 @@ public interface UserService {
 	
 	public UserMaster getUserDetails(String userId);
 
+	public void deleteUser(String userId);
+
 }

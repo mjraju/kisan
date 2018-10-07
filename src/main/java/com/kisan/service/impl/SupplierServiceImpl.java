@@ -32,5 +32,16 @@ public class SupplierServiceImpl implements SupplierService {
 		}
 		return null;
 	}
+	
+	
+	@Override
+	public void deleteSupplierDetails(int supplierId) {
+		try {
+			supplierRepo.delete(supplierId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	
+	}
 
 }

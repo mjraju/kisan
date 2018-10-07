@@ -6,5 +6,6 @@ import java.math.BigInteger;
 
 public interface TransactionService {
 	public void saveTransaction(TransactionDetails transaction);
-	public TransactionDetails getTransaction(BigInteger barcode);
+	public TransactionDetails getTransaction(int barcode);
+	public void deleteTransaction(int barCode);
 }

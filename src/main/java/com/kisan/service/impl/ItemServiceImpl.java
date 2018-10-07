@@ -48,5 +48,16 @@ public class ItemServiceImpl implements ItemService {
 		}
 		return null;
 	}
+	
+	
+	@Override
+	public void deleteItemDetails(int itemId) {
+		try {
+				itemRepo.delete(itemId);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+	}
 
 }

@@ -5,7 +5,7 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.math.BigInteger;
 
-public interface TransactionDetailsRepository extends CrudRepository<TransactionDetails,BigInteger> {
+public interface TransactionDetailsRepository extends CrudRepository<TransactionDetails,Integer> {
 
-	TransactionDetails findByTransId(BigInteger transId);
+	TransactionDetails findByTransId(int transId);
 }

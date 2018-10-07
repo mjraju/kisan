@@ -39,5 +39,16 @@ public class FarmerServiceImpl implements FarmerService {
 		}
 		return null;
 	}
+	
+	
+	@Override
+	public void deleteFarmerDetails(int farmerId) {
+		try {
+				farmerRepo.delete(farmerId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 
 }

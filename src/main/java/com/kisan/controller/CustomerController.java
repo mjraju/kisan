@@ -31,5 +31,13 @@ public class CustomerController {
 		customerService.saveCustomerDetails(customerMst);
 		return ResponseEntity.noContent().build();
 	}
+	
+	@GetMapping("/Customers/{custId}")
+	@CrossOrigin
+	public ResponseEntity<Object> deleteItemDetails (@PathVariable int custId) {
+		
+		customerService.deleteCustomerDetails(custId);
+		return ResponseEntity.noContent().build();
+	}
 
 }

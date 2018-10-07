@@ -45,8 +45,29 @@ public class CustomerMaster {
 	@OneToOne (cascade = CascadeType.ALL)
     @JoinColumn(name="ADDRESS_ID")
 	@NotFound(action = NotFoundAction.IGNORE)
-	private AddressMaster deliveryaddressDetails;
+	private AddressMaster addressDetails;
 	
+	@OneToOne (cascade = CascadeType.ALL)
+    @JoinColumn(name="DELIVERY_ADD_ID")
+	@NotFound(action = NotFoundAction.IGNORE)
+	private AddressMaster deleviryaddressDetails;
+	
+	public AddressMaster getAddressDetails() {
+		return addressDetails;
+	}
+
+	public void setAddressDetails(AddressMaster addressDetails) {
+		this.addressDetails = addressDetails;
+	}
+
+	public AddressMaster getDeleviryaddressDetails() {
+		return deleviryaddressDetails;
+	}
+
+	public void setDeleviryaddressDetails(AddressMaster deleviryaddressDetails) {
+		this.deleviryaddressDetails = deleviryaddressDetails;
+	}
+
 	public int getCustId() {
 		return custId;
 	}
@@ -119,13 +140,7 @@ public class CustomerMaster {
 		this.createDate = createDate;
 	}
 
-	public AddressMaster getDeliveryaddressDetails() {
-		return deliveryaddressDetails;
-	}
-
-	public void setDeliveryaddressDetails(AddressMaster deliveryaddressDetails) {
-		this.deliveryaddressDetails = deliveryaddressDetails;
-	}
+	
 
 	public RegistrationInfo getRegistrationInfo() {
 		return registrationInfo;

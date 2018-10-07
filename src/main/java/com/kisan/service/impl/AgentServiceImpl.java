@@ -34,5 +34,16 @@ public class AgentServiceImpl implements AgentService {
 		}
 		return null;
 	}
+	
+	@Override
+	public void deleteAgentDetails(int agentId) {
+		// TODO Auto-generated method stub
+		try {
+			agentRepo.delete(agentId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+	}
 
 }

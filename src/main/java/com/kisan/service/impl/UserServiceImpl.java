@@ -31,8 +31,25 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public UserMaster getUserDetails(String userId) {
-		// TODO Auto-generated method stub
+		try {
+			return userMstRepo.findByUserId(userId);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 		return null;
+	}
+	
+	
+	@Override
+	public void deleteUser(String userId) {
+		try {
+			if (userId != null) {
+				userMstRepo.delete(userId);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
 	}
 
 }

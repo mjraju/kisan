@@ -2,6 +2,7 @@ package com.kisan.controller;
 
 import com.kisan.model.LoginRequest;
 import com.kisan.model.LoginResponse;
+import com.kisan.model.SupplierMaster;
 import com.kisan.utils.ApplicationConstants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -40,10 +41,25 @@ public class UserMasterController {
 
 	}
 	
+	@GetMapping("/GetUser/{userId}")
+	@CrossOrigin
+	public UserMaster getItemDetails (@PathVariable String userId) {
+		
+		return userService.getUserDetails(userId);
+	}
+	
 	@PostMapping("/Saveuser")
 	@CrossOrigin
 	public ResponseEntity<Object> saveUser(@RequestBody UserMaster userObject) {
 		userService.saveUser(userObject);
+		return ResponseEntity.noContent().build();
+	}
+	
+	
+	@PostMapping("/DeleteUser")
+	@CrossOrigin
+	public ResponseEntity<Object> deleteUser(@RequestBody String userId) {
+		userService.deleteUser(userId);
 		return ResponseEntity.noContent().build();
 	}
 
