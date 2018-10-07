@@ -27,12 +27,12 @@ public class TransactionController {
 	
 	@GetMapping("/Transaction/{barCode}")
 	@CrossOrigin
-	public TransactionDetails getTransaction(@PathVariable("barCode") int barCode ){
+	public TransactionDetails getTransaction(@PathVariable("barCode") String barCode){
 		TransactionDetails transaction = new TransactionDetails();
 		try{
 		//	BigInteger transId = new BigInteger(barCode);
 			logger.info("Barcode  :"+barCode);
-			transaction = transactionService.getTransaction(barCode);
+			transaction = transactionService.getTransaction(Integer.parseInt(barCode));
 		}catch(Exception e){
 			logger.error("Exception in Get transaction "+e.getMessage());
 		}
