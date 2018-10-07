@@ -33,9 +33,9 @@ public class SupplierController {
 	}
 	
 	
-	@PostMapping("/DeleteSupplier/{supplierId}")
+	@PostMapping("/DeleteSupplier")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteItem(@PathVariable int supplierId) {
+	public ResponseEntity<Object> deleteItem(@RequestBody int supplierId) {
 		supplierService.deleteSupplierDetails(supplierId);
 		return ResponseEntity.noContent().build();
 	}

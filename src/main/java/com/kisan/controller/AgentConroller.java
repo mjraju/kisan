@@ -33,9 +33,9 @@ public class AgentConroller {
 	}
 
 	
-	@GetMapping("/Agents/{agentId}")
+	@PostMapping("/DeleteAgents")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteAgentDetails (@PathVariable int agentId) {
+	public ResponseEntity<Object> deleteAgentDetails (@RequestBody int agentId) {
 		agentService.deleteAgentDetails(agentId);
 		return ResponseEntity.noContent().build();
 	}

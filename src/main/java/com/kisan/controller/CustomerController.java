@@ -32,9 +32,9 @@ public class CustomerController {
 		return ResponseEntity.noContent().build();
 	}
 	
-	@GetMapping("/Customers/{custId}")
+	@PostMapping("/DeleteCustomers")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteItemDetails (@PathVariable int custId) {
+	public ResponseEntity<Object> deleteItemDetails (@RequestBody int custId) {
 		
 		customerService.deleteCustomerDetails(custId);
 		return ResponseEntity.noContent().build();

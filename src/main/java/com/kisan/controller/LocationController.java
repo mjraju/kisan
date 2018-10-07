@@ -32,9 +32,9 @@ public class LocationController {
 		return ResponseEntity.noContent().build();
 	}
 	
-	@GetMapping("/Locations/{locId}")
+	@PostMapping("/DeleteLocations")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteLocationDetails (@PathVariable int locId) {
+	public ResponseEntity<Object> deleteLocationDetails (@RequestBody int locId) {
 		
 	    locService.deleteLocationDetails(locId);
 		return ResponseEntity.noContent().build();

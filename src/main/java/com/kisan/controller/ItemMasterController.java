@@ -42,9 +42,9 @@ public class ItemMasterController {
 	}
 	
 	
-	@GetMapping("/Items/{itemId}")
+	@PostMapping("/DeleteItems")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteItemDetails (@PathVariable int itemId) {
+	public ResponseEntity<Object> deleteItemDetails (@RequestBody int itemId) {
 		
 		itemService.deleteItemDetails(itemId);
 		return ResponseEntity.noContent().build();
