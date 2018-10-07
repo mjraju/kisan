@@ -47,10 +47,10 @@ public class TransactionController {
 	}
 	
 	
-	@PostMapping("/DeleteTransaction/{barCode}")
+	@PostMapping("/DeleteTransaction")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteItem(@RequestBody int barCode ) {
-		transactionService.deleteTransaction(barCode);
+	public ResponseEntity<Object> deleteItem(@RequestBody String barCode ) {
+		transactionService.deleteTransaction(Integer.parseInt(barCode));
 		return ResponseEntity.noContent().build();
 	}
 }

@@ -36,9 +36,9 @@ public class FarmerMasterConroller {
 	
 	@PostMapping("/DeleteFarmers")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteItemDetails (@RequestBody int farmerId) {
+	public ResponseEntity<Object> deleteItemDetails (@RequestBody String farmerId) {
 		
-		 farmerService.deleteFarmerDetails(farmerId);
+		 farmerService.deleteFarmerDetails(Integer.parseInt(farmerId));
 		 return ResponseEntity.noContent().build();
 	}
 }

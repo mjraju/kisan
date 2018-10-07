@@ -33,7 +33,9 @@ public class TransactionServiceImpl implements TransactionService {
         TransactionDetails transaction = new TransactionDetails();
         try {
             transaction =  transactionRepo.findByTransId(barCode);
-            logger.info(transaction);
+            logger.info("Transaction details are "+transaction);
+            logger.info("Selling date value is"+ transaction.getSelling_date());
+            logger.info("Storage date value is"+ transaction.getStorage_date());
         } catch (Exception e) {
             logger.error(e.getStackTrace());
         }
