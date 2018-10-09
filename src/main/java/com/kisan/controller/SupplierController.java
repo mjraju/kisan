@@ -20,9 +20,9 @@ public class SupplierController {
 	
 	@GetMapping("/Suppliers/{supplierId}")
 	@CrossOrigin
-	public SupplierMaster getItemDetails (@PathVariable int supplierId) {
+	public SupplierMaster getItemDetails (@PathVariable String supplierId) {
 		
-		return supplierService.getSupplierDetails(supplierId);
+		return supplierService.getSupplierDetails(Integer.parseInt(supplierId));
 	}
 	
 	@PostMapping("/SaveSupplier")
@@ -35,8 +35,8 @@ public class SupplierController {
 	
 	@PostMapping("/DeleteSupplier")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteItem(@RequestBody int supplierId) {
-		supplierService.deleteSupplierDetails(supplierId);
+	public ResponseEntity<Object> deleteItem(@RequestBody String supplierId) {
+		supplierService.deleteSupplierDetails(Integer.parseInt(supplierId));
 		return ResponseEntity.noContent().build();
 	}
 

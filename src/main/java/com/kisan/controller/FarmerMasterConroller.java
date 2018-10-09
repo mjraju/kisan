@@ -21,9 +21,9 @@ public class FarmerMasterConroller {
 	
 	@GetMapping("/Farmers/{farmerId}")
 	@CrossOrigin
-	public FarmerMaster getItemDetails (@PathVariable int farmerId) {
+	public FarmerMaster getItemDetails (@PathVariable String farmerId) {
 		
-		return farmerService.getFarmerDetails(farmerId);
+		return farmerService.getFarmerDetails(Integer.parseInt(farmerId));
 	}
 	
 	@PostMapping("/SaveFarmer")

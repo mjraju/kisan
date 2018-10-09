@@ -20,9 +20,9 @@ public class CustomerController {
 	
 	@GetMapping("/Customers/{custId}")
 	@CrossOrigin
-	public CustomerMaster getItemDetails (@PathVariable int custId) {
+	public CustomerMaster getItemDetails (@PathVariable String custId) {
 		
-		return customerService.getCustomerDetails(custId);
+		return customerService.getCustomerDetails(Integer.parseInt(custId));
 	}
 	
 	@PostMapping("/SaveCustomer")
@@ -34,9 +34,9 @@ public class CustomerController {
 	
 	@PostMapping("/DeleteCustomers")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteItemDetails (@RequestBody int custId) {
+	public ResponseEntity<Object> deleteItemDetails (@RequestBody String custId) {
 		
-		customerService.deleteCustomerDetails(custId);
+		customerService.deleteCustomerDetails(Integer.parseInt(custId));
 		return ResponseEntity.noContent().build();
 	}
 

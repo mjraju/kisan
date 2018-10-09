@@ -20,9 +20,9 @@ public class AgentConroller {
 	
 	@GetMapping("/Agents/{agentId}")
 	@CrossOrigin
-	public AgentMaster getAgentDetails (@PathVariable int agentId) {
+	public AgentMaster getAgentDetails (@PathVariable String agentId) {
 		
-		return agentService.getAgentDetails(agentId);
+		return agentService.getAgentDetails(Integer.parseInt(agentId));
 	}
 	
 	@PostMapping("/SaveAgent")
@@ -35,8 +35,8 @@ public class AgentConroller {
 	
 	@PostMapping("/DeleteAgents")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteAgentDetails (@RequestBody int agentId) {
-		agentService.deleteAgentDetails(agentId);
+	public ResponseEntity<Object> deleteAgentDetails (@RequestBody String agentId) {
+		agentService.deleteAgentDetails(Integer.parseInt(agentId));
 		return ResponseEntity.noContent().build();
 	}
 

@@ -20,9 +20,9 @@ public class LocationController {
 	
 	@GetMapping("/Locations/{locId}")
 	@CrossOrigin
-	public LocationMaster getAgentDetails (@PathVariable int locId) {
+	public LocationMaster getAgentDetails (@PathVariable String locId) {
 		
-		return locService.getLocationDetails(locId);
+		return locService.getLocationDetails(Integer.parseInt(locId));
 	}
 	
 	@PostMapping("/SaveLocation")
@@ -34,9 +34,9 @@ public class LocationController {
 	
 	@PostMapping("/DeleteLocations")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteLocationDetails (@RequestBody int locId) {
+	public ResponseEntity<Object> deleteLocationDetails (@RequestBody String locId) {
 		
-	    locService.deleteLocationDetails(locId);
+	    locService.deleteLocationDetails(Integer.parseInt(locId));
 		return ResponseEntity.noContent().build();
 	}
 

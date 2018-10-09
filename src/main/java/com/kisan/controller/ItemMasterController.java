@@ -23,9 +23,9 @@ public class ItemMasterController {
 	
 	@GetMapping("/Items/{itemId}")
 	@CrossOrigin
-	public ItemMaster getItemDetails (@PathVariable int itemId) {
+	public ItemMaster getItemDetails (@PathVariable String itemId) {
 		
-		return itemService.getItemDetails(itemId);
+		return itemService.getItemDetails(Integer.parseInt(itemId));
 	}
 	
 	@GetMapping("/getItemsList")
@@ -44,9 +44,9 @@ public class ItemMasterController {
 	
 	@PostMapping("/DeleteItems")
 	@CrossOrigin
-	public ResponseEntity<Object> deleteItemDetails (@RequestBody int itemId) {
+	public ResponseEntity<Object> deleteItemDetails (@RequestBody String itemId) {
 		
-		itemService.deleteItemDetails(itemId);
+		itemService.deleteItemDetails(Integer.parseInt(itemId));
 		return ResponseEntity.noContent().build();
 	}
 
