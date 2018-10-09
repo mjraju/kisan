@@ -701,3 +701,14 @@ hr{
     padding-top: 15px;
     text-align: center;
 }
+.searchInnerButton{
+	border-bottom-left-radius: 0px;
+    border-top-left-radius: 0px;
+}
+.searchInnerInput{
+	border-bottom-right-radius: 0px !important;
+	border-top-right-radius: 0px !important;
+	border-top-left-radius: 4px !important;
+	border-bottom-left-radius: 4px !important;
+	border-right: 0px;
+}
