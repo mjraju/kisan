@@ -754,6 +754,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _kisan_supplier_kisan_supplier_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./kisan-supplier/kisan-supplier.component */ "./src/app/kisan-supplier/kisan-supplier.component.ts");
 /* harmony import */ var _kisan_customer_kisan_customer_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./kisan-customer/kisan-customer.component */ "./src/app/kisan-customer/kisan-customer.component.ts");
 /* harmony import */ var _kisan_login_kisan_login_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./kisan-login/kisan-login.component */ "./src/app/kisan-login/kisan-login.component.ts");
+/* harmony import */ var _auth_guard__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./auth.guard */ "./src/app/auth.guard.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -773,11 +774,12 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     { path: '', redirectTo: '/login', pathMatch: 'full' },
     { path: 'login', component: _kisan_login_kisan_login_component__WEBPACK_IMPORTED_MODULE_12__["KisanLoginComponent"] },
     {
-        path: 'kisanDashboard', component: _kisan_dashboard_kisan_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["KisanDashboardComponent"],
+        path: 'kisanDashboard', component: _kisan_dashboard_kisan_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["KisanDashboardComponent"], canActivate: [_auth_guard__WEBPACK_IMPORTED_MODULE_13__["AuthGuard"]],
         children: [
             {
                 path: '',
@@ -1020,12 +1022,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _store_location_store_location_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./store-location/store-location.component */ "./src/app/store-location/store-location.component.ts");
 /* harmony import */ var _kisan_supplier_kisan_supplier_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./kisan-supplier/kisan-supplier.component */ "./src/app/kisan-supplier/kisan-supplier.component.ts");
 /* harmony import */ var _kisan_customer_kisan_customer_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./kisan-customer/kisan-customer.component */ "./src/app/kisan-customer/kisan-customer.component.ts");
+/* harmony import */ var _auth_guard__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./auth.guard */ "./src/app/auth.guard.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -1075,11 +1079,62 @@ var AppModule = /** @class */ (function () {
                 ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_9__["NgMultiSelectDropDownModule"].forRoot(), ag_grid_angular__WEBPACK_IMPORTED_MODULE_4__["AgGridModule"].withComponents([_render_cell_render_cell_component__WEBPACK_IMPORTED_MODULE_10__["RenderCellComponent"]]),
                 angular_webstorage_service__WEBPACK_IMPORTED_MODULE_14__["StorageServiceModule"]
             ],
-            providers: [],
+            providers: [_auth_guard__WEBPACK_IMPORTED_MODULE_21__["AuthGuard"]],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/auth.guard.ts":
+/*!*******************************!*\
+  !*** ./src/app/auth.guard.ts ***!
+  \*******************************/
+/*! exports provided: AuthGuard */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AuthGuard", function() { return AuthGuard; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _kisanlogin_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./kisanlogin.service */ "./src/app/kisanlogin.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm5/router.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AuthGuard = /** @class */ (function () {
+    function AuthGuard(kisanloginService, router) {
+        this.kisanloginService = kisanloginService;
+        this.router = router;
+    }
+    AuthGuard.prototype.canActivate = function (next, state) {
+        if (this.kisanloginService.isLoggedIn()) {
+            return true;
+        }
+        else {
+            this.router.navigate(['login']);
+        }
+    };
+    AuthGuard = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_kisanlogin_service__WEBPACK_IMPORTED_MODULE_1__["KisanloginService"], _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"]])
+    ], AuthGuard);
+    return AuthGuard;
 }());
 
 
@@ -1546,7 +1601,7 @@ module.exports = "/* Dropdown Button */\r\n.dropbtn {\r\n    color: white;\r\n  
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<header>\n  <div class=\"inner\">\n    <h1 class=\"logo\"><a href=\"javascript:void(0)\" (click)=\"showDashboardHome()\">Kisan - Project</a></h1>\n    <nav>\n      <ul class=\"sf-menu sf-js-enabled\">\n        <li id=\"homeLi\" class=\"current\"><a href=\"javascript:void(0)\" (click)=\"showDashboardHome()\">home</a></li>\n        <li id=\"searchFarmerLi\" class=\"dropdown\"><a href=\"javascript:void(0)\" class=\"dropbtn\" >Farmer</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addFarmer(this)\">Add Farmer</a></li>\n            <li><a href=\"javascript:void(0)\" (click)=\"editFarmer(this)\">Edit Farmer</a></li>\n            <li><a href=\"javascript:void(0)\" (click)=\"deleteFarmer(this)\">Delete Farmer</a></li>\n          </ul>\n        </li>\n        <li class=\"dropdown\"> <a href=\"javascript:void(0)\" class=\"dropbtn\" >Transaction</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addProduct(this)\">Add Transaction</a></li>\n            <li><a href=\"javascript:void(0)\" (click)=\"editProduct(this)\">Edit Transaction</a></li>\n            <li> <a href=\"javascript:void(0)\" (click)=\"deleteProduct(this)\">Delete Transaction</a></li>\n          </ul>\n        </li>\n        <li class=\"dropdown\"> <a href=\"javascript:void(0)\" class=\"dropbtn\" >Admin</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >User</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addUser(this)\">Add User</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editUser(this)\">Edit User</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteUser(this)\">Delete User</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Agent</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addAgent(this)\">Add Agent</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editAgent(this)\">Edit Agent</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteAgent(this)\">Delete Agent</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Item</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addItem(this)\">Add Item</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editItem(this)\">Edit Item</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteItem(this)\">Delete Item</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Customer</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addCustomer(this)\">Add Customer</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editCustomer(this)\">Edit Customer</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteCustomer(this)\">Delete Customer</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Supplier</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addSupplier(this)\">Add Supplier</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editSupplier(this)\">Edit Supplier</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteSupplier(this)\">Delete Supplier</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Location</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addLocation(this)\">Add Location</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editLocation(this)\">Edit Location</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteLocation(this)\">Delete Location</a></li>\n              </ul>\n            </li>\n          </ul>\n        </li>\n        <li><a href=\"javascript:void(0)\">contacts</a></li>\n        <li><a href=\"javascript:void(0)\" (click)=\"logout(this)\">Logout</a></li>\n      </ul>\n    </nav>\n    <div class=\"clear\"></div>\n  </div>\n  <!-- <div id=\"slider-main\" *ngIf=\"dashboardHome\">\n  <div class=\"slider-container\">\n      <div class=\"mp-slider\" style=\"z-index: 1; overflow: hidden;\">\n        <ul class=\"items\">\n          <li style=\"display: none;\"><img src=\"assets/images/slide-1.jpg\" alt=\"\">\n            \n          </li>\n          <li style=\"display: none;\"><img src=\"assets/images/slide-2.jpg\" alt=\"\">\n            \n          </li>\n          <li style=\"display: none;\"><img src=\"assets/images/slide-3.jpg\" alt=\"\">\n            \n          </li>\n        </ul>\n      <div class=\"pic\" style=\"overflow: hidden; width: 950px; height: 511px; background: url(&quot;assets/images/slide-3.jpg&quot;) 0px 0px no-repeat;\">\n        <div class=\"mask\" style=\"position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 1;\">\n          <div style=\"left: 0px; top: 0px; position: absolute; width: 950px; height: 511px; background-position: 0px 0px; background-image: url(&quot;assets/images/slide-1.jpg&quot;); opacity: 0.241;\">\n          </div>\n        </div>\n      </div>\n      <div class=\"banner mp-ban-3\" style=\"z-index: 999; display: block; opacity: 0.567009;\">\n        <span class=\"row-1\">growing clean</span>\n        <span class=\"row-2\">and full of health</span>\n        <span class=\"row-3\">products</span>\n      </div>\n    </div>\n    </div>\n    <a href=\"javascript:void(0)\" class=\"mp-prev\"></a>\n    <a href=\"javascript:void(0)\" class=\"mp-next\"></a>\n  </div> -->\n</header>\n<router-outlet></router-outlet>"
+module.exports = "<header>\n  <div class=\"inner\">\n    <h1 class=\"logo\"><a href=\"javascript:void(0)\" (click)=\"showDashboardHome()\">Kisan - Project</a></h1>\n    <nav>\n      <ul class=\"sf-menu sf-js-enabled\">\n        <li id=\"homeLi\" class=\"current\"><a href=\"javascript:void(0)\" (click)=\"showDashboardHome()\">home</a></li>\n        <li id=\"searchFarmerLi\" class=\"dropdown\"><a href=\"javascript:void(0)\" class=\"dropbtn\" >Farmer</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addFarmer(this)\">Add Farmer</a></li>\n            <li><a href=\"javascript:void(0)\" (click)=\"editFarmer(this)\">Edit Farmer</a></li>\n            <li><a href=\"javascript:void(0)\" (click)=\"deleteFarmer(this)\">Delete Farmer</a></li>\n          </ul>\n        </li>\n        <li class=\"dropdown\"> <a href=\"javascript:void(0)\" class=\"dropbtn\" >Transaction</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"addProduct(this)\">Add Transaction</a></li>\n            <li><a href=\"javascript:void(0)\" (click)=\"editProduct(this)\">Edit Transaction</a></li>\n            <li> <a href=\"javascript:void(0)\" (click)=\"deleteProduct(this)\">Delete Transaction</a></li>\n          </ul>\n        </li>\n        <li class=\"dropdown\"> <a href=\"javascript:void(0)\" class=\"dropbtn\" >Admin</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >User</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addUser(this)\">Add User</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editUser(this)\">Edit User</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteUser(this)\">Delete User</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Agent</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addAgent(this)\">Add Agent</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editAgent(this)\">Edit Agent</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteAgent(this)\">Delete Agent</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Item</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addItem(this)\">Add Item</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editItem(this)\">Edit Item</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteItem(this)\">Delete Item</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Customer</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addCustomer(this)\">Add Customer</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editCustomer(this)\">Edit Customer</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteCustomer(this)\">Delete Customer</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Supplier</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addSupplier(this)\">Add Supplier</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editSupplier(this)\">Edit Supplier</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteSupplier(this)\">Delete Supplier</a></li>\n              </ul>\n            </li>\n            <li><a href=\"javascript:void(0)\" class=\"dropdown\" >Location</a>\n              <ul class=\"dropdown-content\">\n                <li><a href=\"javascript:void(0)\" (click)=\"addLocation(this)\">Add Location</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"editLocation(this)\">Edit Location</a></li>\n                <li><a href=\"javascript:void(0)\" (click)=\"deleteLocation(this)\">Delete Location</a></li>\n              </ul>\n            </li>\n          </ul>\n        </li>\n        <li><a href=\"javascript:void(0)\">contacts</a></li>\n        <!-- <li><a href=\"javascript:void(0)\" (click)=\"logout(this)\">{{userId}}Logout</a></li> -->\n        <li class=\"dropdown\"> <a href=\"javascript:void(0)\" class=\"dropbtn\" >{{userId}}</a>\n          <ul class=\"dropdown-content\">\n            <li><a href=\"javascript:void(0)\" (click)=\"logout(this)\">Log out</a></li>\n          </ul>\n        </li>\n      </ul>\n    </nav>\n    <div class=\"clear\"></div>\n  </div>\n  <!-- <div id=\"slider-main\" *ngIf=\"dashboardHome\">\n  <div class=\"slider-container\">\n      <div class=\"mp-slider\" style=\"z-index: 1; overflow: hidden;\">\n        <ul class=\"items\">\n          <li style=\"display: none;\"><img src=\"assets/images/slide-1.jpg\" alt=\"\">\n            \n          </li>\n          <li style=\"display: none;\"><img src=\"assets/images/slide-2.jpg\" alt=\"\">\n            \n          </li>\n          <li style=\"display: none;\"><img src=\"assets/images/slide-3.jpg\" alt=\"\">\n            \n          </li>\n        </ul>\n      <div class=\"pic\" style=\"overflow: hidden; width: 950px; height: 511px; background: url(&quot;assets/images/slide-3.jpg&quot;) 0px 0px no-repeat;\">\n        <div class=\"mask\" style=\"position: absolute; width: 100%; height: 100%; left: 0px; top: 0px; z-index: 1;\">\n          <div style=\"left: 0px; top: 0px; position: absolute; width: 950px; height: 511px; background-position: 0px 0px; background-image: url(&quot;assets/images/slide-1.jpg&quot;); opacity: 0.241;\">\n          </div>\n        </div>\n      </div>\n      <div class=\"banner mp-ban-3\" style=\"z-index: 999; display: block; opacity: 0.567009;\">\n        <span class=\"row-1\">growing clean</span>\n        <span class=\"row-2\">and full of health</span>\n        <span class=\"row-3\">products</span>\n      </div>\n    </div>\n    </div>\n    <a href=\"javascript:void(0)\" class=\"mp-prev\"></a>\n    <a href=\"javascript:void(0)\" class=\"mp-next\"></a>\n  </div> -->\n</header>\n<router-outlet></router-outlet>"
 
 /***/ }),
 
@@ -1595,19 +1650,22 @@ var KisanDashboardComponent = /** @class */ (function () {
         this.showFarmerListFlag = false;
     }
     KisanDashboardComponent.prototype.ngOnInit = function () {
-        if (this.location.path() != '') {
-            this.paths = this.location.path().split('/');
-            console.log(this.paths[this.paths.length] - 1);
-            //debugger;
-            if (this.paths[this.paths.length - 1] == 'kisanDashboard') {
-                this.dashboardHome = true;
-            }
-            if (this.paths[this.paths.length - 1] == 'searchFarmer') {
-                this.dashboardHome = false;
-                jquery__WEBPACK_IMPORTED_MODULE_2__('.current').removeClass('current');
-                jquery__WEBPACK_IMPORTED_MODULE_2__('#searchFarmerLi').addClass('current');
-            }
+        if (this.sessionStorage.get("userId") != undefined && this.sessionStorage.get("userId").length > 0) {
+            this.userId = this.sessionStorage.get("userId");
         }
+        // if (this.location.path() != '') {
+        //   this.paths = this.location.path().split('/');
+        //   console.log(this.paths[this.paths.length] - 1);
+        //   //debugger;
+        //   if (this.paths[this.paths.length - 1] == 'kisanDashboard') {
+        //     this.dashboardHome = true;
+        //   }
+        //   if (this.paths[this.paths.length - 1] == 'searchFarmer') {
+        //     this.dashboardHome = false;
+        //     $('.current').removeClass('current');
+        //     $('#searchFarmerLi').addClass('current');
+        //   }
+        // }
     };
     KisanDashboardComponent.prototype.showDashboardHome = function () {
         this.dashboardHome = true;
@@ -1821,7 +1879,7 @@ var KisanDashboardComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "a {\r\n\tcolor:#007bff;\r\n\ttext-decoration: underline;\r\n\tcursor:pointer;\r\n}\r\n.errorMsg{font-size: 14px;font-weight: 900;padding-bottom: 10px;color: #cd040b;}"
+module.exports = "a {\r\n\tcolor:#007bff;\r\n\ttext-decoration: underline;\r\n\tcursor:pointer;\r\n}\r\n.errorMsg{font-size: 14px;font-weight: 900;padding-bottom: 10px;color: #cd040b;\r\npadding-left: 0px !important}"
 
 /***/ }),
 
@@ -1917,6 +1975,9 @@ var KisanLoginComponent = /** @class */ (function () {
                     _this.errorFlag = true;
                     _this.errorMsg = 'Login Fail, Please Try again';
                 }
+            }, function (Error) {
+                _this.errorFlag = true;
+                _this.errorMsg = "Login Failure, Please Try again";
             });
         }
     };
@@ -2339,6 +2400,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var _environments_environment__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./../environments/environment */ "./src/environments/environment.ts");
+/* harmony import */ var angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! angular-webstorage-service */ "./node_modules/angular-webstorage-service/bundles/angular-webstorage-service.es5.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2348,24 +2410,40 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
 
 
 
 
 var KisanloginService = /** @class */ (function () {
-    function KisanloginService(http) {
+    function KisanloginService(http, sessionStorage) {
         this.http = http;
+        this.sessionStorage = sessionStorage;
         // kisanLoginUrl = 'http://localhost:8080/Authenticate';
         this.loginUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].kisanLoginUrl;
     }
     KisanloginService.prototype.kisanLogin = function (userLoginData) {
         return this.http.post(this.loginUrl, userLoginData).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return data.json(); }));
     };
+    KisanloginService.prototype.isLoggedIn = function () {
+        console.log(this.sessionStorage.get("userId") + this.sessionStorage.get("userRole"));
+        if (this.sessionStorage.get("userId") != undefined && this.sessionStorage.get("userId").length > 0 &&
+            this.sessionStorage.get("userRole") != undefined && this.sessionStorage.get("userRole").length > 0) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    };
     KisanloginService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
             providedIn: 'root'
         }),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"]])
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__["SESSION_STORAGE"])),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_2__["Http"], angular_webstorage_service__WEBPACK_IMPORTED_MODULE_4__["WebStorageService"]])
     ], KisanloginService);
     return KisanloginService;
 }());

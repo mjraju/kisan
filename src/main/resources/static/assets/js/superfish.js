@@ -19,14 +19,14 @@
 			over = function(){
 				var $$ = $(this), menu = getMenu($$);
 				clearTimeout(menu.sfTimer);
-				$$.showSuperfishUl().siblings().hideSuperfishUl();
+				// $$.showSuperfishUl().siblings().hideSuperfishUl();
 			},
 			out = function(){
 				var $$ = $(this), menu = getMenu($$), o = sf.op;
 				clearTimeout(menu.sfTimer);
 				menu.sfTimer=setTimeout(function(){
 					o.retainPath=($.inArray($$[0],o.$path)>-1);
-					$$.hideSuperfishUl();
+					// $$.hideSuperfishUl();
 					if (o.$path.length && $$.parents(['li.',o.hoverClass].join('')).length<1){over.call(o.$path);}
 				},o.delay);	
 			},
@@ -50,7 +50,7 @@
 				if (o.autoArrows) addArrow( $('>a:first-child',this) );
 			})
 			.not('.'+c.bcClass)
-				.hideSuperfishUl();
+				//.hideSuperfishUl();
 			
 			var $a = $('a',this);
 			$a.each(function(i){
@@ -60,7 +60,7 @@
 			
 		}).each(function() {
 			var menuClasses = [c.menuClass];
-			if (sf.op.dropShadows  && !($.browser.msie && $.browser.version < 7)) menuClasses.push(c.shadowClass);
+			// if (sf.op.dropShadows  && !($.browser.msie && $.browser.version < 7)) menuClasses.push(c.shadowClass);
 			$(this).addClass(menuClasses.join(' '));
 		});
 	};
@@ -68,11 +68,11 @@
 	var sf = $.fn.superfish;
 	sf.o = [];
 	sf.op = {};
-	sf.IE7fix = function(){
-		var o = sf.op;
-		if ($.browser.msie && $.browser.version > 6 && o.dropShadows && o.animation.opacity!=undefined)
-			this.toggleClass(sf.c.shadowClass+'-off');
-		};
+	// sf.IE7fix = function(){
+	// 	var o = sf.op;
+	// 	if ($.browser.msie && $.browser.version > 6 && o.dropShadows && o.animation.opacity!=undefined)
+	// 		this.toggleClass(sf.c.shadowClass+'-off');
+	// 	};
 	sf.c = {
 		bcClass     : 'sf-breadcrumb',
 		menuClass   : 'sf-js-enabled',
@@ -95,27 +95,27 @@
 		onShow		: function(){},
 		onHide		: function(){}
 	};
-	$.fn.extend({
-		hideSuperfishUl : function(){
-			var o = sf.op,
-				not = (o.retainPath===true) ? o.$path : '';
-			o.retainPath = false;
-			var $ul = $(['li.',o.hoverClass].join(''),this).add(this).not(not).removeClass(o.hoverClass)
-					.find('>ul').hide();
-			o.onHide.call($ul);
-			return this;
-		},
-		showSuperfishUl : function(){
-			var o = sf.op,
-				sh = sf.c.shadowClass+'-off',
-				$ul = this.addClass(o.hoverClass)
-					.find('>ul:hidden');
-			sf.IE7fix.call($ul);
-			o.onBeforeShow.call($ul);
-			$ul.animate(o.animation,o.speed,function(){ sf.IE7fix.call($ul); o.onShow.call($ul); });
-			return this;
-		}
-	});
+	// $.fn.extend({
+	// 	hideSuperfishUl : function(){
+	// 		var o = sf.op,
+	// 			not = (o.retainPath===true) ? o.$path : '';
+	// 		o.retainPath = false;
+	// 		var $ul = $(['li.',o.hoverClass].join(''),this).add(this).not(not).removeClass(o.hoverClass)
+	// 				.find('>ul').hide();
+	// 		o.onHide.call($ul);
+	// 		return this;
+	// 	},
+	// 	showSuperfishUl : function(){
+	// 		var o = sf.op,
+	// 			sh = sf.c.shadowClass+'-off',
+	// 			$ul = this.addClass(o.hoverClass)
+	// 				.find('>ul:hidden');
+	// 		sf.IE7fix.call($ul);
+	// 		o.onBeforeShow.call($ul);
+	// 		$ul.animate(o.animation,o.speed,function(){ sf.IE7fix.call($ul); o.onShow.call($ul); });
+	// 		return this;
+	// 	}
+	// });
 
 })(jQuery);
 /*---------------------*/

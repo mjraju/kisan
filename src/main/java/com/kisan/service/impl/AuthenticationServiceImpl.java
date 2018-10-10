@@ -3,6 +3,8 @@ package com.kisan.service.impl;
 import com.kisan.model.LoginRequest;
 import com.kisan.model.LoginResponse;
 import com.kisan.utils.ApplicationConstants;
+
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +14,7 @@ import com.kisan.service.AuthenticationService;
 
 @Service
 public class AuthenticationServiceImpl implements AuthenticationService {
-	
+	Logger logger = Logger.getLogger(AuthenticationServiceImpl.class);
 	@Autowired
 	private UserMasterRepository userMasterRepo;
 
@@ -22,6 +24,7 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 		LoginResponse loginResponse = new LoginResponse();
 		try {
 			if (loginRequest.getUserId()!= null && loginRequest.getPassword() != null) {
+				logger.info("checking Authenticaion");
 				loginResponse.setUserId(loginRequest.getUserId());
 				userMstObj = userMasterRepo.findByUserId(loginRequest.getUserId());
 				
@@ -30,8 +33,12 @@ public class AuthenticationServiceImpl implements AuthenticationService {
 						loginResponse.setCode(ApplicationConstants.SUCCESS_CODE);
 						loginResponse.setUserRole(userMstObj.getUserRole());
 					}
-					else
+					else {
 						userRole = "invalid password";
+						loginResponse.setCode(ApplicationConstants.ERROR_CODE);
+						loginResponse.setStatusMessage("Invalid Login");
+					}
+						
 				}else {
 					loginResponse.setCode(ApplicationConstants.ERROR_CODE);
 					loginResponse.setStatusMessage("User Not Found");
