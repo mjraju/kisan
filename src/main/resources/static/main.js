@@ -2059,87 +2059,104 @@ var KisanPortalService = /** @class */ (function () {
         return this.loginsuccess;
     };
     KisanPortalService.prototype.getItemsList = function () {
-        return this.http.get(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].getItemsListUrl).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return data.json(); }));
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/getItemsList";
+        return this.http.get(this.url).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (data) { return data.json(); }));
     };
     KisanPortalService.prototype.getItemById = function (itemId) {
-        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].getItemsByIdUrl + "/" + itemId;
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Items/" + itemId;
         return this.http.get(this.url);
     };
     KisanPortalService.prototype.getUserById = function (userId) {
-        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].getUserByIdUrl + "/" + userId;
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/GetUser/" + userId;
         return this.http.get(this.url);
     };
     KisanPortalService.prototype.getSupplierById = function (supplierId) {
-        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].getSupplierByIdUrl + "/" + supplierId;
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Suppliers/" + supplierId;
         return this.http.get(this.url);
     };
     KisanPortalService.prototype.getLocationById = function (locationId) {
-        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].getLocationByIdUrl + "/" + locationId;
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Locations/" + locationId;
         return this.http.get(this.url);
     };
     KisanPortalService.prototype.getCustomerById = function (customerId) {
-        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].getCustomerByIdUrl + "/" + customerId;
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Customers/" + customerId;
         return this.http.get(this.url);
     };
     KisanPortalService.prototype.getFarmerById = function (farmerId) {
-        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].getFarmerByIdUrl + "/" + farmerId;
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Farmers/" + farmerId;
         return this.http.get(this.url);
     };
     KisanPortalService.prototype.getTransaction = function (barCode) {
-        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].getTransactionUrl + "/" + barCode;
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Transaction/" + barCode;
         return this.http.get(this.url);
     };
     KisanPortalService.prototype.getAgentById = function (agentId) {
-        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].getAgentByIdUrl + "/" + agentId;
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Agents/" + agentId;
         return this.http.get(this.url);
     };
     KisanPortalService.prototype.deleteAgentById = function (agentId) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].deleteAgentByIdUrl, agentId);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/DeleteAgents";
+        return this.http.post(this.url, agentId);
     };
     KisanPortalService.prototype.deleteSupplierById = function (supplierId) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].deleteSupplierByIdUrl, supplierId);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/DeleteSupplier";
+        return this.http.post(this.url, supplierId);
     };
     KisanPortalService.prototype.deleteLocationById = function (locationId) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].deleteLocationByIdUrl, locationId);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/DeleteLocations";
+        return this.http.post(this.url, locationId);
     };
     KisanPortalService.prototype.deleteCustomerById = function (customerId) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].deleteCustomerByIdUrl, customerId);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/DeleteCustomers";
+        return this.http.post(this.url, customerId);
     };
     KisanPortalService.prototype.saveTransactionDetails = function (transData) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].saveTransactionUrl, transData);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/SaveTransaction";
+        return this.http.post(this.url, transData);
     };
     KisanPortalService.prototype.deleteTransaction = function (TransId) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].deleteTransactionUrl, TransId);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/deleteTransaction";
+        return this.http.post(this.url, TransId);
     };
     KisanPortalService.prototype.saveFarmer = function (farmerData) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].saveFarmerUrl, farmerData);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/SaveFarmer";
+        return this.http.post(this.url, farmerData);
     };
     KisanPortalService.prototype.saveUser = function (userData) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].saveUserUrl, userData);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Saveuser";
+        return this.http.post(this.url, userData);
     };
     KisanPortalService.prototype.deleteUserById = function (userId) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].deleteUserByIdUrl, userId);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/DeleteUser";
+        return this.http.post(this.url, userId);
     };
     KisanPortalService.prototype.deleteFarmerById = function (farmerId) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].deleteFarmerByIdUrl, farmerId);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/DeleteFarmers";
+        return this.http.post(this.url, farmerId);
     };
     KisanPortalService.prototype.deleteItemById = function (itemId) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].deleteItemByIdUrl, itemId);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/DeleteItems";
+        return this.http.post(this.url, itemId);
     };
     KisanPortalService.prototype.saveAgent = function (agentData) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].saveAgentUrl, agentData);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/SaveAgent";
+        return this.http.post(this.url, agentData);
     };
     KisanPortalService.prototype.saveItem = function (itemData) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].saveItemUrl, itemData);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Saveitem";
+        return this.http.post(this.url, itemData);
     };
     KisanPortalService.prototype.saveLocation = function (locationData) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].saveLocationUrl, locationData);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/SaveLocation";
+        return this.http.post(this.url, locationData);
     };
     KisanPortalService.prototype.saveSupplier = function (supplierData) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].saveSupplierUrl, supplierData);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/SaveSupplier";
+        return this.http.post(this.url, supplierData);
     };
     KisanPortalService.prototype.saveCustomer = function (customerData) {
-        return this.http.post(_environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].saveCustomerUrl, customerData);
+        this.url = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/SaveCustomer";
+        return this.http.post(this.url, customerData);
     };
     KisanPortalService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
@@ -2423,7 +2440,7 @@ var KisanloginService = /** @class */ (function () {
         this.http = http;
         this.sessionStorage = sessionStorage;
         // kisanLoginUrl = 'http://localhost:8080/Authenticate';
-        this.loginUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].kisanLoginUrl;
+        this.loginUrl = _environments_environment__WEBPACK_IMPORTED_MODULE_3__["environment"].domain + "/Authenticate";
     }
     KisanloginService.prototype.kisanLogin = function (userLoginData) {
         return this.http.post(this.loginUrl, userLoginData).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_1__["map"])(function (data) { return data.json(); }));
@@ -2710,7 +2727,7 @@ __webpack_require__.r(__webpack_exports__);
 // The list of file replacements can be found in `angular.json`.
 var environment = {
     production: false,
-    domain: 'http://localhost:8080',
+    domain: 'http://13.127.82.72:8080',
     kisanLoginUrl: 'http://localhost:8080/Authenticate',
     getItemsListUrl: 'http://localhost:8080/getItemsList',
     getItemsByIdUrl: 'http://localhost:8080/Items',
